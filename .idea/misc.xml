@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/activity_main.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/fragment_tutorial.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
       </map>
     </option>
