@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/ic_continue_blue.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/ic_continue_btn.xml" value="0.2861111111111111" />
+        <entry key="app/src/main/res/drawable/ic_dgmg_logo.xml" value="0.30666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_login_background.xml" value="0.30666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_login_text.xml" value="0.30666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_second_logo.xml" value="0.2861111111111111" />
+        <entry key="app/src/main/res/drawable/ic_signup_text1.xml" value="0.2861111111111111" />
+        <entry key="app/src/main/res/drawable/ic_signup_toast.xml" value="0.2861111111111111" />
+        <entry key="app/src/main/res/drawable/ratangle_id_background.xml" value="0.30666666666666664" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
       </map>
     </option>
   </component>
