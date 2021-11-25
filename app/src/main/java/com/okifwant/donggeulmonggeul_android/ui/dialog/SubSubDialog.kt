@@ -35,6 +35,13 @@ class SubSubDialog(private val viewModel: PostDetailViewModel, private val isPos
                     viewModel.startEditPost.value = viewModel.postId
                 }
             }
+
+            deleteBtn.setOnClickListener {
+                if(isPost) {
+                    viewModel.deletePost()
+                }
+            }
+
             reportBtn.setOnClickListener {
                 if(isPost) {
                     viewModel.reportPost()

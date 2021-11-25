@@ -49,6 +49,9 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
                 }
                 startActivity(intent)
             })
+            finish.observe(this@PostDetailActivity, {
+                finish()
+            })
         }
     }
 
