@@ -33,6 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/new_post_imageView" />
 
     <TextView
+        android:id="@+id/category_textview"
         android:layout_marginRight="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +46,7 @@
         app:layout_constraintTop_toTopOf="@+id/title_textView" />
 
     <TextView
+        android:id="@+id/nickname_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

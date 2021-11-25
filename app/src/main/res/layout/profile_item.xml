@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/profile_imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/report_background"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:src="@drawable/more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
+        android:id="@+id/profile_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/noto_sans_medium"
+        android:text="오늘 단골식당 망했다"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/profile_imageView"
+        app:layout_constraintTop_toTopOf="@+id/profile_imageView" />
+
+    <TextView
+        android:id="@+id/fun_profile_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_sans_medium"
+        android:text="웃겨요"
+        android:textColor="#4E575F"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/profile_title_text"
+        app:layout_constraintTop_toBottomOf="@+id/profile_title_text" />
+
+    <TextView
+        android:id="@+id/nickname_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/noto_sans_medium"
+        android:text="홍길동"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_imageView"
+        app:layout_constraintStart_toStartOf="@+id/fun_profile_textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

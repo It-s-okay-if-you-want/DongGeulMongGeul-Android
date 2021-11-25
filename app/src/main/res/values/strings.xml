@@ -2,4 +2,5 @@
     <string name="app_name">DongGeulMongGeul-Android</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="token">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QiLCJpYXQiOjE2Mzc4Mjc4NzMsImV4cCI6MTYzNzkxNDI3Mywic3ViIjoidG9rZW4ifQ.rl617JAF1OsqnkQYoAl7wjrg5SDW8JTV0FbNc04X8To</string>
 </resources>

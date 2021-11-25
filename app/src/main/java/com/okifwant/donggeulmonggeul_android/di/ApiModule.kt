@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.di
 
+import com.okifwant.donggeulmonggeul_android.data.api.PostService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
-    private const val BASE_URL = "http://101.101.208.54:8080/"
+    private const val BASE_URL = "http://101.101.208.54:3000/"
 
     @Singleton
     @Provides
@@ -30,6 +31,12 @@ object ApiModule {
             .Builder()
             .addNetworkInterceptor(httpLoggingInterceptor)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideLoginService(retrofit: Retrofit): PostService {
+        return retrofit.create(PostService::class.java)
+    }
 
     @Singleton
     @Provides
