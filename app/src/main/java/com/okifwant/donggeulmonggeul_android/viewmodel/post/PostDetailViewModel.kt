@@ -27,6 +27,7 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
                         add(RecyclerItem(data = body!!.data.image, layoutId = R.layout.item_post_photo, variableId = BR.imageUrl))
                         add(RecyclerItem(data = PostDetailBody(body.data.title, body.data.content), layoutId = R.layout.item_post_body, variableId = BR.detail))
                         for(comment in body.data.comment) {
+                            add(RecyclerItem(data = PostCommentViewModel(comment = comment.content, userName = comment.userId), layoutId = R.layout.item_post_comment, variableId = BR.comment))
                         }
                     }
                 }
@@ -35,6 +36,11 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
         }
 
     }
+
+    inner class PostCommentViewModel(val comment: String, val userName: String) {
+
+    }
 }
 
 data class PostDetailBody(val title: String, val content: String)
+
