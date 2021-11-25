@@ -12,5 +12,10 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
     override val layoutId: Int = R.layout.activity_post_detail
     override val viewModel: PostDetailViewModel by viewModels()
 
+    override fun init() {
+        val postId: Int = intent.getIntExtra("postId", -1)
+        viewModel.postId = postId
+        viewModel.getPostDetailData()
+    }
 
 }

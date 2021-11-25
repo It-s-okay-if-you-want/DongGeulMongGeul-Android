@@ -4,5 +4,5 @@ import com.okifwant.donggeulmonggeul_android.dto.PostDetailResponse
 import retrofit2.Response
 
 interface PostDetailDataSource {
-    suspend fun getPostDetail(): Response<PostDetailResponse>
+    suspend fun getPostDetail(id: Int): Response<PostDetailResponse>
 }
