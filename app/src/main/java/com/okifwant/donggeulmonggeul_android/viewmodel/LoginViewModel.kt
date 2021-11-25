@@ -37,6 +37,7 @@ class LoginViewModel @Inject constructor(
                 if(response.body() != null) {
                     localStorage.saveRefreshToken(response.body()!!.data.token)
                     localStorage.saveToken(response.body()!!.data.refreshToken)
+                    userToken = response.body()!!.data.token
                     onClickEvent(ClickEvent.Login(response.body()!!))
                 }
 
@@ -49,6 +50,9 @@ class LoginViewModel @Inject constructor(
         data class Login(val data : LoginResponse) : ClickEvent()
     }
 
+    companion object{
+        var userToken = ""
+    }
 
 
 }

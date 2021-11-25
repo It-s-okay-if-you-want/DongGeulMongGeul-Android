@@ -1,6 +1,7 @@
 package com.okifwant.donggeulmonggeul_android.ui
 
 import android.content.Intent
+import android.util.Log
 import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
@@ -9,8 +10,8 @@ import com.okifwant.donggeulmonggeul_android.dto.LoginRequest
 import com.okifwant.donggeulmonggeul_android.repeatOnStarted
 import com.okifwant.donggeulmonggeul_android.ui.activity.MainActivity
 import com.okifwant.donggeulmonggeul_android.viewmodel.LoginViewModel
+import com.okifwant.donggeulmonggeul_android.viewmodel.LoginViewModel.Companion.userToken
 import dagger.hilt.android.AndroidEntryPoint
-import gun0912.tedimagepicker.util.ToastUtil
 import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
@@ -35,6 +36,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     }
 
     private fun loginSuccess(){
+        Log.d("TAG","로그인 성공 token 값 : $userToken")
         val intent = Intent(this, TutorialMainActivity::class.java)
         startActivity(intent)
         finish()
