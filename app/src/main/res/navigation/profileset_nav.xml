@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileset_nav"
+    app:startDestination="@id/myInformationSetMain">
+    <fragment
+        android:id="@+id/myInformationSetMain"
+        android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.MyInformationSetMain"
+        android:label="MyInformationSetMain"
+        tools:layout="@layout/fragment_my_information_set_main">
+        <action
+            android:id="@+id/action_myInformationSetMain_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment2_to_myInformationSetMain"
+            app:destination="@id/myInformationSetMain" />
+    </fragment>
+</navigation>

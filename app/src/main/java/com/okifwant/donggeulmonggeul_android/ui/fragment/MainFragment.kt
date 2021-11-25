@@ -23,7 +23,7 @@ class MainFragment : Fragment() {
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var binding : FragmentMainBinding
 
-    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QiLCJpYXQiOjE2Mzc4Mjc4NzMsImV4cCI6MTYzNzkxNDI3Mywic3ViIjoidG9rZW4ifQ.rl617JAF1OsqnkQYoAl7wjrg5SDW8JTV0FbNc04X8To"
+    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

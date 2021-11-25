@@ -2,6 +2,7 @@ package com.okifwant.donggeulmonggeul_android.di
 
 import com.okifwant.donggeulmonggeul_android.data.api.PostService
 import com.okifwant.donggeulmonggeul_android.data.api.CategoryApi
+import com.okifwant.donggeulmonggeul_android.data.post.ProfileApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,6 +38,11 @@ object ApiModule {
     @Singleton
     fun provideLoginService(retrofit: Retrofit): PostService {
         return retrofit.create(PostService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideProfileService(retrofit: Retrofit): ProfileApi {
+        return retrofit.create(ProfileApi::class.java)
     }
 
     @Singleton

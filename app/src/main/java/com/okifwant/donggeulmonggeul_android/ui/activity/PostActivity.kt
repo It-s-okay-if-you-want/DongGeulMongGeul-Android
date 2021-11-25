@@ -19,6 +19,7 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
     override val viewModel: PostViewModel by viewModels()
 
     override fun init() {
+
         binding.run {
             postTb.setNavigationOnClickListener {
                 finish()

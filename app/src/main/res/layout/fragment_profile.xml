@@ -7,6 +7,10 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.okifwant.donggeulmonggeul_android.ui.fragment.ProfileFragment" />
+
 
         <variable
             name="text"
@@ -46,6 +50,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <ImageView
+            android:onClick="@{() -> fragment.startPost()}"
             android:id="@+id/imageView4"
             android:layout_width="20dp"
             android:layout_height="20dp"

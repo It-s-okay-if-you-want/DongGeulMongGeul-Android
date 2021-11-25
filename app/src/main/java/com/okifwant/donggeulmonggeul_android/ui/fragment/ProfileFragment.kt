@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -18,12 +19,15 @@ import com.okifwant.donggeulmonggeul_android.data.model.auth.Post
 import com.okifwant.donggeulmonggeul_android.data.model.newpop.Data
 import com.okifwant.donggeulmonggeul_android.databinding.FragmentMainBinding
 import com.okifwant.donggeulmonggeul_android.databinding.FragmentProfileBinding
+import com.okifwant.donggeulmonggeul_android.ui.activity.MyInformationSetMainActivity
+import com.okifwant.donggeulmonggeul_android.ui.activity.PostActivity
 import com.okifwant.donggeulmonggeul_android.viewmodel.MainViewModel
 import com.okifwant.donggeulmonggeul_android.wiget.extension.showVertical
 import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
-    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMiIsImlhdCI6MTYzNzc3MDE0OSwiZXhwIjoxNjM3ODU2NTQ5LCJzdWIiOiJ0b2tlbiJ9.JE8xpWnQbbTOWzmPIbAEB5Fk774K4I-oak8YwbuZ6eg"
+
+    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var binding : FragmentProfileBinding
 
@@ -34,6 +38,7 @@ class ProfileFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)        // Inflate the layout for this fragment
 
+        binding.fragment = this
         userPost()
         getAuth()
 
@@ -46,6 +51,12 @@ class ProfileFragment : Fragment() {
 
 
         return binding.root
+    }
+
+
+    fun startPost() {
+        val postIntent = Intent(requireActivity(), MyInformationSetMainActivity::class.java)
+        startActivity(postIntent)
     }
 
     fun getAuth(){

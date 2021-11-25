@@ -2,6 +2,7 @@ package com.okifwant.donggeulmonggeul_android.di
 
 import com.okifwant.donggeulmonggeul_android.data.post.PostApi
 import com.okifwant.donggeulmonggeul_android.data.post.PostDataSource
+import com.okifwant.donggeulmonggeul_android.data.post.ProfileApi
 import com.okifwant.donggeulmonggeul_android.pref.LocalStorage
 import dagger.Module
 import dagger.Provides

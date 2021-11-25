@@ -14,9 +14,14 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.activity.MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MyInformationSetMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.TutorialMainActivity"
             android:exported="true" />
-
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true"
@@ -31,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activity.PostTogetherActivity"
             android:exported="false" />

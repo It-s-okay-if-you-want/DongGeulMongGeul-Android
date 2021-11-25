@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.okifwant.donggeulmonggeul_android.viewmodel.ProfileViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(0).toString()}"
+                        android:onClick="@{()->vm.dogClicked(0)}"
+                        android:background="@{vm.dogIndex == 0? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 0? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(1).toString()}"
+                        android:onClick="@{()->vm.dogClicked(1)}"
+                        android:background="@{vm.dogIndex == 1? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 1? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(2).toString()}"
+                        android:onClick="@{()->vm.dogClicked(2)}"
+                        android:background="@{vm.dogIndex == 2? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 2? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(3).toString()}"
+                        android:onClick="@{()->vm.dogClicked(3)}"
+                        android:background="@{vm.dogIndex == 3? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 3? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(4).toString()}"
+                        android:onClick="@{()->vm.dogClicked(4)}"
+                        android:background="@{vm.dogIndex == 4? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 4? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(5).toString()}"
+                        android:onClick="@{()->vm.dogClicked(5)}"
+                        android:background="@{vm.dogIndex == 5? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 5? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="@{vm.dogList.get(6).toString()}"
+                        android:onClick="@{()->vm.dogClicked(6)}"
+                        android:background="@{vm.dogIndex == 6? @color/main_color:@color/white}"
+                        android:textColor="@{vm.dogIndex == 6? @color/white:@color/black}"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

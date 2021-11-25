@@ -3,6 +3,7 @@ package com.okifwant.donggeulmonggeul_android.data.post
 import com.okifwant.donggeulmonggeul_android.data.post.dto.PostImageResponse
 import com.okifwant.donggeulmonggeul_android.data.post.dto.PostRequest
 import com.okifwant.donggeulmonggeul_android.data.post.dto.PostTogetherRequest
+import com.okifwant.donggeulmonggeul_android.dto.ProfileUpdate
 import com.okifwant.donggeulmonggeul_android.pref.LocalStorage
 import okhttp3.MultipartBody
 import retrofit2.Response

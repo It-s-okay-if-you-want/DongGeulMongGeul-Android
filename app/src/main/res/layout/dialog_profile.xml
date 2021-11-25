@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.okifwant.donggeulmonggeul_android.viewmodel.ProfileViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="서울"
+                        android:onClick="@{()->vm.categoryClicked(0)}"
+                        android:background="@{vm.localIndex == 0? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 0? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="대구"
+                        android:onClick="@{()->vm.categoryClicked(1)}"
+                        android:background="@{vm.localIndex == 1? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 1? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="대전"
+                        android:onClick="@{()->vm.categoryClicked(2)}"
+                        android:background="@{vm.localIndex == 2? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 2? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="인천"
+                        android:onClick="@{()->vm.categoryClicked(3)}"
+                        android:background="@{vm.localIndex == 3? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 3? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="광주"
+                        android:onClick="@{()->vm.categoryClicked(4)}"
+                        android:background="@{vm.localIndex == 4? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 4? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="부산"
+                        android:onClick="@{()->vm.categoryClicked(5)}"
+                        android:background="@{vm.localIndex == 5? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 5? @color/white:@color/black}"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_medium"
+                        android:gravity="center"
+                        android:text="강릉"
+                        android:onClick="@{()->vm.categoryClicked(6)}"
+                        android:background="@{vm.localIndex == 6? @color/main_color:@color/white}"
+                        android:textColor="@{vm.localIndex == 6? @color/white:@color/black}"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

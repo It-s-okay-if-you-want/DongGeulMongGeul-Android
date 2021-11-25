@@ -40,7 +40,6 @@ class ProfileAdapter(val fragment : Fragment,val data : List<Post>? ) : Recycler
     }
 
     override fun getItemCount(): Int {
-        Log.d("dsaffads",data!!.size.toString())
         return data!!.size
     }
 }
