@@ -41,6 +41,8 @@ class ProfileFragment : Fragment() {
         userPost()
         getAuth()
 
+        binding.fragment =this
+
         viewModel.auth.observe(viewLifecycleOwner){
             binding.text = it
             postList()
