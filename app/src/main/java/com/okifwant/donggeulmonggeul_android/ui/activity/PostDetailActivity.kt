@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
+import android.content.Intent
 import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
@@ -22,6 +23,11 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
         viewModel.postId = postId
         viewModel.getPostDetailData()
         observeEvent()
+        binding.postMoreBtn.setOnClickListener {
+            if (supportFragmentManager.findFragmentByTag("subSubDialog")?.isAdded != true){
+                SubSubDialog(viewModel, isPost = true).show(supportFragmentManager, "subSubDialog")
+            }
+        }
     }
 
     private fun observeEvent() {
@@ -29,10 +35,15 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
             message.observe(this@PostDetailActivity, {
                 ToastUtil.showToast(it)
             })
-            clickedCommentId.observe(this@PostDetailActivity,{
+            clickedCommentId.observe(this@PostDetailActivity, {
                 if (supportFragmentManager.findFragmentByTag("subSubDialog")?.isAdded != true) {
-                    SubSubDialog(viewModel).show(supportFragmentManager, "subSubDialog")
+                    SubSubDialog(viewModel, isPost = false).show(supportFragmentManager, "subSubDialog")
                 }
+            })
+            startEditPost.observe(this@PostDetailActivity, {
+                val intent = Intent(this@PostDetailActivity, PostActivity::class.java)
+                intent.putExtra("edit_postId", it)
+                startActivity(intent)
             })
         }
     }

@@ -1,6 +1,5 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
@@ -19,8 +18,17 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
 
     override val viewModel: PostViewModel by viewModels()
 
+    var isEdit = false
     override fun init() {
+        if(intent.getIntExtra("edit_postId", -1) != -1) {
+            isEdit = true
+            viewModel.isEdit = isEdit
+        }
         binding.run {
+            if(isEdit) {
+                postTitleTv.text = "게시물 수정"
+                postStartBtn.text = "수정하기"
+            }
             postTb.setNavigationOnClickListener {
                 finish()
             }

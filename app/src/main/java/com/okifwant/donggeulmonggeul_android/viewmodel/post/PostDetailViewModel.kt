@@ -24,6 +24,8 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     val message = SingleLiveEvent<String>()
 
     val clickedCommentId = SingleLiveEvent<Int>()
+
+    val startEditPost = SingleLiveEvent<Int>()
     fun getPostDetailData() {
         viewModelScope.launch {
             val response = postDetailDataSource.getPostDetail(postId)
@@ -85,8 +87,23 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
         }
     }
 
+    fun reportPost() {
+        viewModelScope.launch {
+            val response = postDetailDataSource.reportPost(postId)
+            if(response.isSuccessful) {
+                message.value = "게시글에 섭섭함을 표시하였습니다"
+            }
+        }
+    }
+
     fun reportComment() {
-        postDetailDataSource
+        viewModelScope.launch {
+            val response = postDetailDataSource.reportComment(clickedCommentId.value?:0)
+            if(response.isSuccessful) {
+                message.value = "댓글에 섭섭함을 표시하였습니다"
+            }
+        }
+
     }
 }
 

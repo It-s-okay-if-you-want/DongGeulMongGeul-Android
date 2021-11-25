@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.okifwant.donggeulmonggeul_android.R
-import com.okifwant.donggeulmonggeul_android.databinding.DialogDatePickerBinding
+import com.okifwant.donggeulmonggeul_android.databinding.DialogSubSubBinding
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostDetailViewModel
 
-class SubSubDialog(private val viewModel: PostDetailViewModel): DialogFragment() {
-    lateinit var binding: DialogDatePickerBinding
+class SubSubDialog(private val viewModel: PostDetailViewModel, private val isPost: Boolean): DialogFragment() {
+    lateinit var binding: DialogSubSubBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +29,20 @@ class SubSubDialog(private val viewModel: PostDetailViewModel): DialogFragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        binding.run {
+            editBtn.setOnClickListener {
+                if(isPost) {
+                    viewModel.startEditPost.call()
+                }
+            }
+            reportBtn.setOnClickListener {
+                if(isPost) {
+                    viewModel.reportPost()
+                } else {
+                    viewModel.reportComment()
+                }
+            }
+        }
     }
 
 }

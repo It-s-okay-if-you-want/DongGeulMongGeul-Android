@@ -34,6 +34,7 @@
                 android:textSize="15sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/post_more_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -52,6 +53,7 @@
             app:recyclerItems="@{vm.postItems}" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/shape_edittext_background"
