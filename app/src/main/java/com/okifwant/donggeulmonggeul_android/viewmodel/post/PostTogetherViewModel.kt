@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PostTogetherViewModel @Inject constructor(private val postDataSource: PostData): BaseViewModel() {
+class PostTogetherViewModel @Inject constructor(private val postDataSource: PostDataSource): BaseViewModel() {
     val title = MutableLiveData<String>()
 
     val category = MutableLiveData("카테고리")
@@ -20,6 +20,8 @@ class PostTogetherViewModel @Inject constructor(private val postDataSource: Post
     val body = MutableLiveData<String>()
 
     val imageUri = MutableLiveData<Uri>()
+
+    val date = MutableLiveData<String>()
 
     val imageString = MutableLiveData<String>()
 

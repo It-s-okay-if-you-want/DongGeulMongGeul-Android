@@ -1,7 +1,5 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
@@ -13,4 +11,5 @@ import dagger.hilt.android.AndroidEntryPoint
 class PostTogetherActivity : BaseActivity<ActivityPostTogetherBinding, PostTogetherViewModel>() {
     override val layoutId: Int = R.layout.activity_post_together
     override val viewModel: PostTogetherViewModel by viewModels()
+
 }
