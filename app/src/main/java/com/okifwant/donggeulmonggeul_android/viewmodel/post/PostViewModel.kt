@@ -60,12 +60,12 @@ class PostViewModel @Inject constructor(private val postDataSource: PostDataSour
 
     }
 
-    suspend fun post() {
+    fun post() {
         viewModelScope.launch {
             val response = postDataSource.post(
                 PostRequest(
                     title.value ?: "",
-                    category = categoryIndex.value ?: 0,
+                    category = (categoryIndex.value ?: 0) + 1,
                     content = body.value ?: "",
                     image = imageString.value ?: ""
                 )
