@@ -14,10 +14,14 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".ui.SignUpActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize|adjustResize" />
         <activity
             android:name=".ui.LoginActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

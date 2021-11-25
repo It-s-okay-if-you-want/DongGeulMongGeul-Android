@@ -8,6 +8,8 @@
             name="vm"
             type="com.okifwant.donggeulmonggeul_android.viewmodel.SignUpViewModel" />
     </data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,10 +31,8 @@
             android:id="@+id/cl_id"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="127dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.0"
             tools:layout_editor_absoluteX="-16dp">
 
             <ImageView
@@ -40,57 +40,59 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="26dp"
                 android:src="@drawable/ic_signup_text1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteY="26dp" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="29dp"
-                android:layout_marginTop="118dp"
+                android:layout_marginBottom="39dp"
                 android:text="먼저 아이디가 필요해요 :)"
                 android:textColor="#7E858B"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintBottom_toTopOf="@+id/et_id"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/et_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="42dp"
+                android:layout_marginBottom="128dp"
+                android:backgroundTint="@color/black"
+                android:hint="아이디를 입력해주세요"
+                android:singleLine="true"
                 android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:text="x"
                 android:textColor="#ff0000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/editText"
-                app:layout_constraintTop_toTopOf="@+id/editText" />
+                app:layout_constraintEnd_toEndOf="@+id/et_id"
+                app:layout_constraintTop_toTopOf="@+id/et_id" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/ic_check"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/editText"
-                app:layout_constraintTop_toTopOf="@+id/editText" />
+                app:layout_constraintEnd_toEndOf="@+id/et_id"
+                app:layout_constraintTop_toTopOf="@+id/et_id" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -132,6 +134,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="34dp"
                 android:hint="6자리 이상 입력해주세요!"
+                android:backgroundTint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
@@ -152,12 +155,14 @@
                 app:layout_constraintTop_toBottomOf="@id/et_password" />
 
             <EditText
+                android:id="@+id/et_check_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="34dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="34dp"
                 android:hint="위에서 입력했던 비밀번호를 입력해주세요!"
+                android:backgroundTint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
@@ -210,8 +215,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <EditText
+                android:id="@+id/et_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
                 android:hint="당신의 개성을 찾아줄 닉네임을 입력해보세요!"
                 android:layout_marginStart="34dp"
                 android:layout_marginTop="12dp"
@@ -230,12 +237,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:src="@drawable/ic_signup_toast"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+            app:layout_constraintBottom_toTopOf="@+id/ib_continue_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/ib_continue_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="56dp"

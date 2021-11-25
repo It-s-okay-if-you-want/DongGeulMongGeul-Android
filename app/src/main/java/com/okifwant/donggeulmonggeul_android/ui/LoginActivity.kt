@@ -19,7 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
         liveEvent()
     }
 
-    fun liveEvent() {
+    private fun liveEvent() {
         repeatOnStarted {
             viewModel.clickEvent.collect {
                 when (it) {
