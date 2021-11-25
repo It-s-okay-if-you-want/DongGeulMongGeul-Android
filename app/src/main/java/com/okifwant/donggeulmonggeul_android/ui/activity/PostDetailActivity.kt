@@ -6,6 +6,7 @@ import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostDetailBinding
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import gun0912.tedimagepicker.util.ToastUtil
 
 @AndroidEntryPoint
 class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailViewModel>() {
@@ -16,12 +17,13 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
         val postId: Int = intent.getIntExtra("postId", -1)
         viewModel.postId = postId
         viewModel.getPostDetailData()
+        observeEvent()
     }
 
     private fun observeEvent() {
         viewModel.run {
             message.observe(this@PostDetailActivity, {
-
+                ToastUtil.showToast(it)
             })
         }
     }

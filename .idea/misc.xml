@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/activity_post_detail.xml" value="0.31577577422265196" />
         <entry key="app/src/main/res/layout/activity_post_together.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/category_community_recycler_item.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/dialog_category_post.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/dialog_date_picker.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_category_in_community.xml" value="0.14895833333333333" />
