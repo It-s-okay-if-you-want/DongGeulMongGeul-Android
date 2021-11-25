@@ -1,7 +1,5 @@
 package com.okifwant.donggeulmonggeul_android.ui.dialog
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,5 +26,7 @@ class PostCategoryDialog(private val vm: PostViewModel): BottomSheetDialogFragme
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.vm = vm
     }
 }

@@ -14,4 +14,9 @@ class PostViewModel: BaseViewModel() {
 
     val imageUri = MutableLiveData<Uri>()
 
+    val categoryIndex = MutableLiveData<Int>()
+
+    fun categoryClicked(index: Int) {
+        categoryIndex.value = index
+    }
 }
