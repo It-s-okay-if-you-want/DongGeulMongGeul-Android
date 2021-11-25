@@ -18,4 +18,12 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
         viewModel.getPostDetailData()
     }
 
+    private fun observeEvent() {
+        viewModel.run {
+            message.observe(this@PostDetailActivity, {
+
+            })
+        }
+    }
+
 }

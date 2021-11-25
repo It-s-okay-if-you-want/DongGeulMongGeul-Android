@@ -20,8 +20,9 @@ object PostDetailModule {
     @Provides
     fun providePostDetailDataSource(
         postDetailApi: PostDetailApi,
+        commentApi: CommentApi,
         localStorage: LocalStorage
-    ): PostDetailDataSource = PostDetailDataSourceImpl(postDetailApi, localStorage)
+    ): PostDetailDataSource = PostDetailDataSourceImpl(postDetailApi, commentApi, localStorage)
 
     @Singleton
     @Provides

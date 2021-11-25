@@ -10,4 +10,6 @@ interface PostDetailDataSource {
     suspend fun deletePostDetail(id : Int) : Response<Unit>
 
     suspend fun putPostDetail(id : Int, postDetail : PutPostDetailRequest) : Response<Unit>
+
+    suspend fun postComment(message: String) : Response<Unit>
 }

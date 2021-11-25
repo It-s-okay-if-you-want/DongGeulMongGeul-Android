@@ -63,6 +63,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/shape_comment_et"
                 android:fontFamily="@font/noto_sans_regular"
+                android:text="@={vm.comment}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/post_upload_btn"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +75,7 @@
                 android:layout_height="35dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_upload_btn"
+                android:onClick="@{()->vm.postComment()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

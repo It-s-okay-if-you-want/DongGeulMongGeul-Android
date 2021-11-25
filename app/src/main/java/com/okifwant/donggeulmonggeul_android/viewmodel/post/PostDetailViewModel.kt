@@ -6,6 +6,7 @@ import com.okifwant.donggeulmonggeul_android.BR
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.adapter.RecyclerItem
 import com.okifwant.donggeulmonggeul_android.base.BaseViewModel
+import com.okifwant.donggeulmonggeul_android.base.SingleLiveEvent
 import com.okifwant.donggeulmonggeul_android.data.postdetail.PostDetailDataSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -16,6 +17,10 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     val postItems = MutableLiveData<List<RecyclerItem>>()
 
     var postId = -1
+
+    val comment = MutableLiveData<String>()
+
+    val message = SingleLiveEvent<String>()
 
     fun getPostDetailData() {
         viewModelScope.launch {
@@ -40,6 +45,17 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     inner class PostCommentViewModel(val comment: String, val userName: String) {
         fun more() {
 
+        }
+    }
+
+    fun postComment() {
+        if(comment.value != null){
+            viewModelScope.launch {
+                val response = postDetailDataSource.postComment(comment.value!!)
+                if(response.isSuccessful) {
+                    message.value = "댓글을 게시하였습니다"
+                }
+            }
         }
     }
 }
