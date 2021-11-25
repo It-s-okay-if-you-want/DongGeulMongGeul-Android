@@ -8,9 +8,11 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.databinding.DialogCategoryPostBinding
+import com.okifwant.donggeulmonggeul_android.repeatOnStarted
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostViewModel
+import kotlinx.coroutines.flow.collect
 
-class PostCategoryDialog(private val vm: PostViewModel): BottomSheetDialogFragment() {
+class PostCategoryDialog(private val vm: PostViewModel) : BottomSheetDialogFragment() {
     private lateinit var binding: DialogCategoryPostBinding
 
     override fun getTheme(): Int = R.style.CustomBottomSheetDialogTheme
@@ -35,7 +37,7 @@ class PostCategoryDialog(private val vm: PostViewModel): BottomSheetDialogFragme
         vm.run {
             categoryIndex.observe(viewLifecycleOwner, {
                 category.value =
-                    when(it) {
+                    when (it) {
                         0 -> "기뻐요"
                         1 -> "웃겨요"
                         2 -> "슬퍼요"
@@ -46,6 +48,16 @@ class PostCategoryDialog(private val vm: PostViewModel): BottomSheetDialogFragme
                         else -> "카테고리"
                     }
             })
+        }
+        repeatOnStarted {
+            vm.clickEvent.collect {
+                when (it) {
+                    is PostViewModel.ClickEvent.CategoryClick -> {
+                        dismiss()
+                    }
+                }
+
+            }
         }
     }
 }
