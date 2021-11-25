@@ -12,11 +12,11 @@ import retrofit2.http.Part
 interface PostApi {
 
     @Multipart
-    @POST("/upload")
+    @POST("upload")
     suspend fun postImage(
-        @Part image: MultipartBody.Part
+        @Part images: MultipartBody.Part
     ): Response<PostImageResponse>
 
-    @POST("/post")
+    @POST("post")
     suspend fun post(@Body request: PostRequest): Response<Unit>
 }
