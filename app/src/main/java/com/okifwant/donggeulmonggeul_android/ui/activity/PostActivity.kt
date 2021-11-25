@@ -11,4 +11,10 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
     override val layoutId: Int = R.layout.activity_post
 
     override val viewModel: PostViewModel by viewModels()
+
+    override fun init() {
+        binding.postTb.setNavigationOnClickListener {
+            finish()
+        }
+    }
 }
