@@ -2,6 +2,7 @@ package com.okifwant.donggeulmonggeul_android.di
 
 import com.okifwant.donggeulmonggeul_android.data.post.PostApi
 import com.okifwant.donggeulmonggeul_android.data.post.PostDataSource
+import com.okifwant.donggeulmonggeul_android.pref.LocalStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +16,7 @@ object PostModule {
 
     @Singleton
     @Provides
-    fun providePostDataSource(postApi: PostApi): PostDataSource = PostDataSource(postApi)
+    fun providePostDataSource(postApi: PostApi, localStorage: LocalStorage): PostDataSource = PostDataSource(postApi, localStorage)
 
     @Singleton
     @Provides

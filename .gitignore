@@ -17,3 +17,7 @@ local.properties
 .idea/deploymentTargetDropDown.xml
 
 .idea/.misc 2.xml.icloud
+
+app/build 2.gradle
+
+.idea/misc 3.xml

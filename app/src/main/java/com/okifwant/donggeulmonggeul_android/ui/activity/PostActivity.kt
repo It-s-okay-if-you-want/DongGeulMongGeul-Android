@@ -37,7 +37,7 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                     PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
                 }
             }
-            vm.done.observe(this@PostActivity, {
+            viewModel.done.observe(this@PostActivity, {
                 Snackbar.make(binding.root, "게시하였습니다", Snackbar.LENGTH_SHORT).show()
                 finish()
             })

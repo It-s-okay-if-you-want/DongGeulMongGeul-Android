@@ -33,7 +33,7 @@ class PostTogetherActivity : BaseActivity<ActivityPostTogetherBinding, PostToget
                     DatePickerDialog(viewModel).show(supportFragmentManager, "category_dialog")
                 }
             }
-            vm.done.observe(this@PostTogetherActivity, {
+            viewModel.done.observe(this@PostTogetherActivity, {
                 Snackbar.make(binding.root, "게시하였습니다", Snackbar.LENGTH_SHORT).show()
                 finish()
             })

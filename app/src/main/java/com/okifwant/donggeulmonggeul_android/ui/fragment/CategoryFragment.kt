@@ -25,6 +25,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
     override fun init() {
         binding.fragment = this
+        binding.plus.setOnClickListener {
+            //start post 작성
+        }
     }
 
 /*    1: 기뻐요
