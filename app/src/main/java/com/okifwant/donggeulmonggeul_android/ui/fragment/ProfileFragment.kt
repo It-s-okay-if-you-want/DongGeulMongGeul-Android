@@ -23,7 +23,6 @@ import com.okifwant.donggeulmonggeul_android.wiget.extension.showVertical
 import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
-    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMiIsImlhdCI6MTYzNzc3MDE0OSwiZXhwIjoxNjM3ODU2NTQ5LCJzdWIiOiJ0b2tlbiJ9.JE8xpWnQbbTOWzmPIbAEB5Fk774K4I-oak8YwbuZ6eg"
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var binding : FragmentProfileBinding
 
@@ -55,7 +54,7 @@ class ProfileFragment : Fragment() {
 
                 lifecycleScope.launch {
 
-                    viewModel.getAuth(token)
+                    viewModel.getAuth()
                 }
 
             }
