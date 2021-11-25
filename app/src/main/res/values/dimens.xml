@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_icon_size">36dp</dimen>
+    <dimen name="category_icon_background">70dp</dimen>
+    <dimen name="category_icon_and_txt_size">13dp</dimen>
+    <dimen name="category_arrow_size">22dp</dimen>
+    <dimen name="category_txt_1_size">15sp</dimen>
+    <dimen name="category_txt_2">16sp</dimen>
+    <dimen name="category_item_margin_bottom">25dp</dimen>
+    <dimen name="tutorial_start_btn_margin">30dp</dimen>
+</resources>

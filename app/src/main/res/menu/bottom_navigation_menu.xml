@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainFragment"
+        android:title="메인"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/categoryFragment"
+        android:title="카테고리"
+        android:icon="@drawable/katagory_icon"/>
+    <item
+        android:id="@+id/communityFragment"
+        android:title="커뮤니티"
+        android:icon="@drawable/comunity_icon"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:title="내정보"
+        android:icon="@drawable/profile_icon"/>
+
+</menu>
