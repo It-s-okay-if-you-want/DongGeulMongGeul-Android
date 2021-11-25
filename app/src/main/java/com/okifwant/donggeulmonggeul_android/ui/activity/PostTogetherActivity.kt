@@ -2,11 +2,15 @@ package com.okifwant.donggeulmonggeul_android.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
+import com.okifwant.donggeulmonggeul_android.base.BaseActivity
+import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostTogetherBinding
+import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostTogetherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class PostTogetherActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post_together)
-    }
+@AndroidEntryPoint
+class PostTogetherActivity : BaseActivity<ActivityPostTogetherBinding, PostTogetherViewModel>() {
+    override val layoutId: Int = R.layout.activity_post_together
+    override val viewModel: PostTogetherViewModel by viewModels()
 }
