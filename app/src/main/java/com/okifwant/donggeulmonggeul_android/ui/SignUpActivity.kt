@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.ui
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +12,11 @@ import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivitySignUpBinding
+import com.okifwant.donggeulmonggeul_android.dto.RegisterRequest
 import com.okifwant.donggeulmonggeul_android.viewmodel.SignUpViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpActivity : BaseActivity<ActivitySignUpBinding, SignUpViewModel>() {
 
     override val layoutId = R.layout.activity_sign_up
@@ -20,6 +24,9 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding, SignUpViewModel>() {
 
     var status = 1
     var empty = true
+
+    var id = ""
+    var password  = ""
 
     override fun init() {
         edittextTyping(binding.etId)
@@ -55,7 +62,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding, SignUpViewModel>() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (editText.text.toString().length > 6 && (editText.text.toString() == editText2.text.toString())) {
+                if (editText.text.toString().length > 5 && (editText.text.toString().length == editText2.text.toString().length)) {
                     binding.ibContinueBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_continue_blue))
                     empty = true
                 } else {
@@ -69,25 +76,61 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding, SignUpViewModel>() {
         })
     }
 
+    fun intent(){
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
 
     private fun clickContinue() {
         binding.ibContinueBtn.setOnClickListener {
             when (status) {
                 1 -> {
                     if (!binding.etId.text.isNullOrEmpty()) {
-                        binding.clId.visibility = View.INVISIBLE
-                        binding.clPassword.visibility = View.VISIBLE
-                        binding.ibContinueBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_continue_blue))
+                        binding.etId.visibility = View.GONE
+                        binding.tvId.visibility = View.GONE
+                        binding.ivFirstText.visibility = View.GONE
+
+                        binding.etCheckPassword.visibility = View.VISIBLE
+                        binding.etPassword.visibility = View.VISIBLE
+                        binding.tvPassword.visibility = View.VISIBLE
+                        binding.tvPasswordCheck.visibility = View.VISIBLE
+                        binding.ivSecondText.visibility = View.VISIBLE
+
+                        binding.ibContinueBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_continue_gray_btn))
                         status++
+
+                        id = binding.etId.text.toString()
                     }
                 }
                 2 -> {
                     if (binding.etPassword.text.toString().length > 6 && (binding.etCheckPassword.text.toString() == binding.etPassword.text.toString())) {
-                        binding.clPassword.visibility = View.GONE
-                        binding.clNickname.visibility = View.VISIBLE
-                        binding.ibContinueBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_continue_blue))
+
+                        binding.etCheckPassword.visibility = View.GONE
+                        binding.etPassword.visibility = View.GONE
+                        binding.tvPassword.visibility = View.GONE
+                        binding.tvPasswordCheck.visibility = View.GONE
+                        binding.ivSecondText.visibility = View.GONE
+
+                        binding.etNickname.visibility = View.VISIBLE
+                        binding.ivNicknameText.visibility = View.VISIBLE
+                        binding.tvExamNickname.visibility = View.VISIBLE
+                        binding.tvNickname.visibility = View.VISIBLE
+
+                        binding.ibContinueBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_continue_gray_btn))
                         status++
+
+                        password = binding.etPassword.text.toString()
                     }
+                }
+                3 ->{
+                    if(!binding.etNickname.text.isNullOrEmpty()){
+                        viewModel.register(RegisterRequest(id,password,binding.etNickname.text.toString(),"aaa"))
+                        intent()
+
+                    }
+
+
                 }
             }
         }
