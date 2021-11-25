@@ -9,7 +9,7 @@ import com.okifwant.donggeulmonggeul_android.R
 
 
 class MainFragment : Fragment() {
-
+ 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
