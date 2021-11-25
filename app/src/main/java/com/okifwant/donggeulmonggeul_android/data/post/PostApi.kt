@@ -15,5 +15,5 @@ interface PostApi {
     ): Response<PostImageResponse>
 
     @POST("post")
-    suspend fun post(@Body request: PostRequest): Response<Unit>
+    suspend fun post(@Header("Authorization") token: String, @Body request: PostRequest): Response<Unit>
 }
