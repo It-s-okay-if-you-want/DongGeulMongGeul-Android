@@ -6,27 +6,46 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseFragment
 import com.okifwant.donggeulmonggeul_android.databinding.FragmentCategoryBinding
+import com.okifwant.donggeulmonggeul_android.viewmodel.CategoryInCommunityViewModel
 import com.okifwant.donggeulmonggeul_android.viewmodel.CategoryViewModel
 import com.okifwant.donggeulmonggeul_android.viewmodel.MainViewModel
 
 class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
     override val layoutId = R.layout.fragment_category
     override val viewModel : CategoryViewModel by viewModels()
+    private val categoryInCommunityViewModel by activityViewModels<CategoryInCommunityViewModel>()
+
 
 
     override fun init() {
         binding.fragment = this
     }
 
+/*    1: 기뻐요
+    2: 웃겨요
+    3: 슬퍼요
+    4: 무서워요
+    5: 여기에요
+    6: 조심해요
+    7: 추천해요
+    8: 같이해요*/
     fun clickEvent(view: View){
-  /*      when(view.id){
-            binding.allPost.id ->
-        }*/
+        when(view.id){
+            binding.happy.id -> categoryInCommunityViewModel.choiceCategory = 1
+            binding.smail.id -> categoryInCommunityViewModel.choiceCategory = 2
+            binding.sad.id -> categoryInCommunityViewModel.choiceCategory = 3
+            binding.scary.id -> categoryInCommunityViewModel.choiceCategory = 4
+            binding.here.id -> categoryInCommunityViewModel.choiceCategory = 5
+            binding.meet.id -> categoryInCommunityViewModel.choiceCategory = 8
+            binding.waring.id -> categoryInCommunityViewModel.choiceCategory = 6
+            binding.star.id -> categoryInCommunityViewModel.choiceCategory = 7
+        }
         this@CategoryFragment.findNavController().navigate(R.id.action_categoryFragment_to_categoryInCommunityFragment)
     }
 }
