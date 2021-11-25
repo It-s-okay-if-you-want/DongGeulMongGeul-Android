@@ -10,6 +10,7 @@ import com.okifwant.donggeulmonggeul_android.base.Event
 import com.okifwant.donggeulmonggeul_android.data.model.auth.Auth
 import com.okifwant.donggeulmonggeul_android.data.model.newpop.Data
 import com.okifwant.donggeulmonggeul_android.data.model.newpop.Post
+import com.okifwant.donggeulmonggeul_android.pref.LocalStorage
 import com.okifwant.donggeulmonggeul_android.widget.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -17,8 +18,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-   private val service : PostService
-) : BaseViewModel(){
+    private val service: PostService,
+    private val localStorage: LocalStorage
+) : BaseViewModel() {
 
     private val TAG = "MainLog"
 
@@ -42,49 +44,49 @@ class MainViewModel @Inject constructor(
 
 
     // 1 = 숨기기, 2 = 보이기
-    fun setClickEvent(setup : Int) {
-        when(setup){
+    fun setClickEvent(setup: Int) {
+        when (setup) {
             1 -> _clickEvent.postValue(1)
             2 -> _clickEvent.postValue(2)
         }
     }
 
-    suspend fun getPoPAndNewPost(token : String) = viewModelScope.launch {
+    suspend fun getPoPAndNewPost() = viewModelScope.launch {
 
+        val token = localStorage.getToken()
         try {
             service.viewTest(token).let {
                 _isSuccess.value = Event(true)
 
-                Log.d("is susses","$it")
+                Log.d("is susses", "$it")
                 _data.value = it
 
             }
             service.viewPop(token).let {
                 _isSuccess.value = Event(true)
 
-                Log.d("is susses pop","$it")
+                Log.d("is susses pop", "$it")
                 _popData.value = it
             }
-          }
-             catch (e: Exception) {
-                 Log.d(TAG, "fail to : $e")
+        } catch (e: Exception) {
+            Log.d(TAG, "fail to : $e")
 
-                 _isSuccess.value = Event(false)
-             }
-         }
+            _isSuccess.value = Event(false)
+        }
+    }
 
-    suspend fun getAuth(token: String) = viewModelScope.launch {
+    suspend fun getAuth() = viewModelScope.launch {
+        val token = localStorage.getToken()
         try {
             service.viewAuth(token).let {
                 _isSuccess.value = Event(true)
 
-                Log.d("is susses Auth","$it")
+                Log.d("is susses Auth", "$it")
 
                 _auth.value = it
 
             }
-        }
-        catch (e: Exception) {
+        } catch (e: Exception) {
             Log.d(TAG, "fail to : $e")
 
             _isSuccess.value = Event(false)
