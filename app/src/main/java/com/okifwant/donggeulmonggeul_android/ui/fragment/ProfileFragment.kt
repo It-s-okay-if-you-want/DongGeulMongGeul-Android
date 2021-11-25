@@ -64,8 +64,8 @@ class ProfileFragment : Fragment() {
             with(viewModel){
 
                 lifecycleScope.launch {
-
-                    viewModel.getAuth()
+                    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
+                    viewModel.getAuth(token)
                 }
 
             }
