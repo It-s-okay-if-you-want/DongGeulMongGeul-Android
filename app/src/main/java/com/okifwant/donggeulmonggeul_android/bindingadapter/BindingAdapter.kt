@@ -21,7 +21,7 @@ fun ImageView.setImageUri(uri: Uri?) {
 }
 
 @BindingAdapter("imageUrl")
-fun ImageView.setImageUrl(url: String) {
+fun ImageView.setImageUrl(url: String?) {
     val progressDrawable = CircularProgressDrawable(context).apply {
         strokeWidth = 10f
         centerRadius = 40f

@@ -27,9 +27,9 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
             val response = postDetailDataSource.getPostDetail(postId)
             if(response.isSuccessful) {
                 if(response.body() != null) {
-                    val body = response.body()
+                    val body = response.body()!!
                     postItems.value = ArrayList<RecyclerItem>().apply {
-                        add(RecyclerItem(data = body!!.data.image, layoutId = R.layout.item_post_photo, variableId = BR.imageUrl))
+                        add(RecyclerItem(data = body.data.image?:"", layoutId = R.layout.item_post_photo, variableId = BR.imageUrl))
                         add(RecyclerItem(data = PostDetailBody(body.data.title, body.data.content), layoutId = R.layout.item_post_body, variableId = BR.detail))
                         for(comment in body.data.comment) {
                             add(RecyclerItem(data = PostCommentViewModel(comment = comment.content, userName = comment.userId), layoutId = R.layout.item_post_comment, variableId = BR.comment))
@@ -51,8 +51,9 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     fun postComment() {
         if(comment.value != null){
             viewModelScope.launch {
-                val response = postDetailDataSource.postComment(comment.value!!)
+                val response = postDetailDataSource.postComment(postId, comment.value!!)
                 if(response.isSuccessful) {
+                    getPostDetailData()
                     message.value = "댓글을 게시하였습니다"
                 }
             }

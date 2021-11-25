@@ -5,10 +5,12 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface CommentApi {
     @POST("comment/{idx}")
-    fun postComment(
+    suspend fun postComment(
+        @Path("idx") idx: Int,
         @Header("Authorization") token: String,
         @Body request: CommentRequest
     ): Response<Unit>

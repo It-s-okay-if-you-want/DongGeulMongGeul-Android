@@ -10,6 +10,7 @@ import com.okifwant.donggeulmonggeul_android.repeatOnStarted
 import com.okifwant.donggeulmonggeul_android.ui.activity.MainActivity
 import com.okifwant.donggeulmonggeul_android.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import gun0912.tedimagepicker.util.ToastUtil
 import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
@@ -35,6 +36,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
     private fun loginSuccess(){
         println("실행")
+        ToastUtil.showToast("성공하였습니다")
         val intent = Intent(this, TutorialMainActivity::class.java)
         startActivity(intent)
         finish()

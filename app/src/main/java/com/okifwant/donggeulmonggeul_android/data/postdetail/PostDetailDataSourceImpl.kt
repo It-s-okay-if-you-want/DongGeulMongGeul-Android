@@ -19,7 +19,7 @@ class PostDetailDataSourceImpl(private val postDetailApi : PostDetailApi, privat
     override suspend fun putPostDetail(id: Int, postDetail: PutPostDetailRequest): Response<Unit> =
         postDetailApi.putPostDetail(id,postDetail,localStorage.getToken())
 
-    override suspend fun postComment(message: String): Response<Unit> =
-        commentApi.postComment(localStorage.getToken(), CommentRequest(message))
+    override suspend fun postComment(id: Int, message: String): Response<Unit> =
+        commentApi.postComment(id, localStorage.getToken(), CommentRequest(message))
 
 }

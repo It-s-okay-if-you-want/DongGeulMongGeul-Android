@@ -8,20 +8,20 @@ import retrofit2.http.*
 interface PostDetailApi {
 
     @GET("/post/{idx}")
-    fun getPostDetail(
+    suspend fun getPostDetail(
         @Path("idx") id : Int,
         @Header("Authorization") token : String
     ) : Response<PostDetailResponse>
 
     @DELETE("/post/{idx}")
-    fun deletePostDetail(
+    suspend fun deletePostDetail(
         @Path("idx") id : Int,
         @Header("Authorization") token : String
     ) : Response<Unit>
 
 
     @PUT("/post/{idx}")
-    fun putPostDetail(
+    suspend fun putPostDetail(
         @Path("idx") id : Int,
         @Body putPostDetail : PutPostDetailRequest,
         @Header("Authorization") token : String

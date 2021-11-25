@@ -15,6 +15,9 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
 
     override fun init() {
         val postId: Int = intent.getIntExtra("postId", -1)
+        binding.postTb.setNavigationOnClickListener {
+            finish()
+        }
         viewModel.postId = postId
         viewModel.getPostDetailData()
         observeEvent()

@@ -57,13 +57,15 @@
             android:background="@drawable/shape_edittext_background"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/shape_comment_et"
                 android:fontFamily="@font/noto_sans_regular"
+                android:paddingStart="5dp"
                 android:text="@={vm.comment}"
+                android:textCursorDrawable="@drawable/edittext_cursor_custom"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/post_upload_btn"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,8 +76,8 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_upload_btn"
                 android:onClick="@{()->vm.postComment()}"
+                android:src="@drawable/ic_upload_btn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
