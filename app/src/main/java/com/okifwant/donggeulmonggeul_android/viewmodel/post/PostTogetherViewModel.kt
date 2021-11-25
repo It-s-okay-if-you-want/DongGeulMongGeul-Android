@@ -7,13 +7,15 @@ import com.okifwant.donggeulmonggeul_android.base.BaseViewModel
 import com.okifwant.donggeulmonggeul_android.base.SingleLiveEvent
 import com.okifwant.donggeulmonggeul_android.data.post.PostDataSource
 import com.okifwant.donggeulmonggeul_android.data.post.dto.PostRequest
+import com.okifwant.donggeulmonggeul_android.data.post.dto.PostTogetherRequest
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
 import javax.inject.Inject
 
 @HiltViewModel
-class PostTogetherViewModel @Inject constructor(private val postDataSource: PostDataSource): BaseViewModel() {
+class PostTogetherViewModel @Inject constructor(private val postDataSource: PostDataSource) :
+    BaseViewModel() {
     val title = MutableLiveData<String>()
 
     val category = MutableLiveData("카테고리")
@@ -31,15 +33,16 @@ class PostTogetherViewModel @Inject constructor(private val postDataSource: Post
     val done = SingleLiveEvent<Unit>()
     fun post() {
         viewModelScope.launch {
-            val response = postDataSource.post(
-                PostRequest(
-                    title.value ?: "",
+            val response = postDataSource.postTogether(
+                PostTogetherRequest(
+                    title = title.value ?: "",
                     category = (categoryIndex.value ?: 0) + 1,
+                    date = date.value ?: "",
                     content = body.value ?: "",
                     image = imageString.value ?: ""
                 )
             )
-            if(response.isSuccessful) {
+            if (response.isSuccessful) {
                 done.call()
             }
         }
@@ -48,8 +51,8 @@ class PostTogetherViewModel @Inject constructor(private val postDataSource: Post
     fun postImage(image: MultipartBody.Part) {
         viewModelScope.launch {
             val response = postDataSource.postImage(image)
-            if(response.isSuccessful) {
-                if(response.body() != null) {
+            if (response.isSuccessful) {
+                if (response.body() != null) {
                     imageString.value = response.body()!!.data.files[0]
                 }
             }
