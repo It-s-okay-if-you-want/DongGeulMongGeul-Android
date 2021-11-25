@@ -38,7 +38,9 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     }
 
     inner class PostCommentViewModel(val comment: String, val userName: String) {
+        fun more() {
 
+        }
     }
 }
 

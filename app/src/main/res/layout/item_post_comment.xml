@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="comment"
             type="com.okifwant.donggeulmonggeul_android.viewmodel.post.PostDetailViewModel.PostCommentViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_textview_background">
+
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/post_comment_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="10dp"
-            tools:text="박지나"
-            android:text="@{comment.userName}"
             android:fontFamily="@font/noto_sans_regular"
-            android:textColor="@color/black" />
+            android:text="@{comment.userName}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="박지나" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="@{()->comment.more()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_more_vert_black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/post_comment_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/noto_sans_regular"
+            android:text="@{comment.comment}"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/post_comment_name_tv"
+            tools:text="애초에 눕ㅈ를 말았아야.." />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
