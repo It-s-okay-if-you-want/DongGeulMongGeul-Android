@@ -79,6 +79,10 @@ dependencies {
     //datastore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
+    // lifecycle
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
     //custom viewpager
     implementation "com.github.zhpanvip:viewpagerindicator:1.2.1"
     implementation 'com.tbuonomo:dotsindicator:4.2'
