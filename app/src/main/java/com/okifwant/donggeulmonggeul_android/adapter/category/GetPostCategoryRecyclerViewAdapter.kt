@@ -40,11 +40,14 @@ class GetPostCategoryRecyclerViewAdapter (
         return viewModel.getPostCategoryList.size
     }
 
-    class GetPostCategoryRecyclerViewHolder(val binding: CategoryCommunityRecyclerItemBinding) :
+    inner class GetPostCategoryRecyclerViewHolder(val binding: CategoryCommunityRecyclerItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Data) {
             binding.data = data
             binding.executePendingBindings()
+            binding.postCl.setOnClickListener {
+                viewModel.clickedPost.value = data.idx
+            }
         }
     }
 }
