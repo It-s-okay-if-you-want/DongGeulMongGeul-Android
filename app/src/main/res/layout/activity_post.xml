@@ -49,19 +49,20 @@
             android:background="@drawable/shape_edittext_background"
             app:layout_constraintTop_toBottomOf="@+id/post_tb"
             android:hint="제목"
-            android:paddingStart="10dp"
+            android:paddingStart="15dp"
             android:textSize="13sp"
             android:textColor="#7E858B"
             android:fontFamily="@font/noto_sans_regular"
             android:layout_marginTop="15dp"/>
 
         <TextView
+            android:id="@+id/post_category_tv"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="37dp"
             android:background="@drawable/shape_edittext_background"
             app:layout_constraintTop_toBottomOf="@id/post_title_et"
             android:layout_marginTop="15dp"
-            android:paddingStart="10dp"
+            android:paddingStart="15dp"
             android:textSize="13sp"
             android:textColor="#7E858B"
             android:fontFamily="@font/noto_sans_regular"
@@ -69,7 +70,16 @@
             android:drawablePadding="15dp"
             android:text="@{vm.category}" />
 
-        
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@+id/post_category_tv"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_edittext_background"
+            android:hint="내용"
+            android:textSize="13sp"
+            android:padding="15dp"
+            android:gravity="start"
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
