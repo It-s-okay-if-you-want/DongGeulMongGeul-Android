@@ -1,6 +1,7 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostTogetherBinding
@@ -28,10 +29,14 @@ class PostTogetherActivity : BaseActivity<ActivityPostTogetherBinding, PostToget
                     }
             }
             postCategoryTv.setOnClickListener {
-                if (supportFragmentManager.findFragmentByTag("category_dialog")?.isAdded != true){
+                if (supportFragmentManager.findFragmentByTag("category_dialog")?.isAdded != true) {
                     DatePickerDialog(viewModel).show(supportFragmentManager, "category_dialog")
                 }
             }
+            vm.done.observe(this@PostTogetherActivity, {
+                Snackbar.make(binding.root, "게시하였습니다", Snackbar.LENGTH_SHORT).show()
+                finish()
+            })
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostBinding
@@ -36,6 +37,10 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                     PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
                 }
             }
+            vm.done.observe(this@PostActivity, {
+                Snackbar.make(binding.root, "게시하였습니다", Snackbar.LENGTH_SHORT).show()
+                finish()
+            })
         }
     }
 }
