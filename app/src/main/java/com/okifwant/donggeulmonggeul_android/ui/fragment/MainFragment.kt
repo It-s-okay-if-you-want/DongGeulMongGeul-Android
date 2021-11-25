@@ -55,8 +55,9 @@ class MainFragment : Fragment() {
             with(viewModel){
 
                 lifecycleScope.launch {
+                    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
 
-                    viewModel.getAuth()
+                    viewModel.getAuth(token)
                 }
 
             }
@@ -70,7 +71,8 @@ class MainFragment : Fragment() {
 
                 lifecycleScope.launch {
 
-                    viewModel.getPoPAndNewPost()
+                    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
+                    viewModel.getPoPAndNewPost(token)
                 }
 
             }

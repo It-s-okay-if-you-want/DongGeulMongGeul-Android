@@ -51,7 +51,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    suspend fun getPoPAndNewPost() = viewModelScope.launch {
+    suspend fun getPoPAndNewPost(token : String) = viewModelScope.launch {
 
         val token = localStorage.getToken()
         try {
@@ -75,7 +75,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    suspend fun getAuth() = viewModelScope.launch {
+    suspend fun getAuth(code : String) = viewModelScope.launch {
         val token = localStorage.getToken()
         try {
             service.viewAuth(token).let {
