@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PostDetailViewModel @Inject constructor(private val postDetailDataSource: PostDetailDataSource): BaseViewModel() {
-    val items = MutableLiveData<List<RecyclerItem>>()
+    val postItems = MutableLiveData<List<RecyclerItem>>()
 
     var postId = -1
 
@@ -23,7 +23,7 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
             if(response.isSuccessful) {
                 if(response.body() != null) {
                     val body = response.body()
-                    items.value = ArrayList<RecyclerItem>().apply {
+                    postItems.value = ArrayList<RecyclerItem>().apply {
                         add(RecyclerItem(data = body!!.data.image, layoutId = R.layout.item_post_photo, variableId = BR.imageUrl))
                         add(RecyclerItem(data = PostDetailBody(body.data.title, body.data.content), layoutId = R.layout.item_post_body, variableId = BR.detail))
                         for(comment in body.data.comment) {
