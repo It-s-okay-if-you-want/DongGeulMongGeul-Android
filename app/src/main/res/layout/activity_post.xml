@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.okifwant.donggeulmonggeul_android.viewmodel.post.PostViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9F9"
+        tools:context=".ui.activity.PostActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/post_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_close_big">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="@string/write_post"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="15dp"
+                android:padding="5dp"
+                android:text="게시하기"
+                android:textColor="@color/main_color"
+                android:textSize="12sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/post_title_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_edittext_background"
+            android:fontFamily="@font/noto_sans_regular"
+            android:hint="제목"
+            android:paddingStart="15dp"
+            android:text="@={vm.title}"
+            android:textCursorDrawable="@drawable/edittext_cursor_custom"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/post_tb" />
+
+        <TextView
+            android:id="@+id/post_category_tv"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_edittext_background"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/noto_sans_regular"
+            android:paddingStart="15dp"
+            android:text="@{vm.category}"
+            android:textColor="#7E858B"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/post_title_et" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/post_body_et"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_edittext_background"
+            android:fontFamily="@font/noto_sans_regular"
+            android:gravity="start"
+            android:hint="내용"
+            android:paddingStart="15dp"
+            android:text="@={vm.body}"
+            android:textCursorDrawable="@drawable/edittext_cursor_custom"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/post_category_tv" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_textview_background"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/post_body_et">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:visibility="@{vm.imageUri != null?View.VISIBLE:View.GONE}"
+                app:imageUri="@{vm.imageUri}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/post_image_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_image"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/noto_sans_regular"
+                android:paddingStart="15dp"
+                android:text="사진추가하기"
+                android:textColor="@color/main_color"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
