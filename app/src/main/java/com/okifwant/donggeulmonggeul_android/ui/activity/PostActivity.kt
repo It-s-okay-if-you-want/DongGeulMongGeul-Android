@@ -20,14 +20,19 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
 
     var isEdit = false
     override fun init() {
-        if(intent.getIntExtra("edit_postId", -1) != -1) {
+        if (intent.getIntExtra("edit_postId", -1) != -1) {
             isEdit = true
             viewModel.isEdit = isEdit
         }
         binding.run {
-            if(isEdit) {
+            if (isEdit) {
                 postTitleTv.text = "게시물 수정"
                 postStartBtn.text = "수정하기"
+                viewModel.run {
+                    title.value = intent.getStringExtra("title")
+                    body.value = intent.getStringExtra("content")
+                    category.value = intent.getStringExtra("category")
+                }
             }
             postTb.setNavigationOnClickListener {
                 finish()
@@ -40,7 +45,7 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                     }
             }
             postCategoryTv.setOnClickListener {
-                if (supportFragmentManager.findFragmentByTag("category_dialog")?.isAdded != true){
+                if (supportFragmentManager.findFragmentByTag("category_dialog")?.isAdded != true) {
                     PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
                 }
             }
