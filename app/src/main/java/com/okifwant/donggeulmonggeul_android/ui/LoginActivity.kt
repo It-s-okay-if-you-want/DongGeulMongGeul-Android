@@ -11,4 +11,6 @@ import com.okifwant.donggeulmonggeul_android.viewmodel.LoginViewModel
 class LoginActivity :BaseActivity<ActivityLoginBinding, LoginViewModel>(){
     override val layoutId = R.layout.activity_login
     override val viewModel : LoginViewModel by viewModels()
+
+
 }
