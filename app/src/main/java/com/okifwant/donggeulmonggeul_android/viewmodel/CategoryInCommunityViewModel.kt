@@ -32,6 +32,8 @@ class CategoryInCommunityViewModel @Inject constructor(
 
     val testToken  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODMwMDY5LCJleHAiOjE2Mzc5MTY0NjksInN1YiI6InRva2VuIn0.T10cPT7ia7a-PfnIzMrd8ceRiOlKzhrY7CDPx11UhfI"
 
+    val clickedPost = SingleLiveEvent<Int>()
+
     fun getPostCategory(category : Int) = viewModelScope.launch {
         try {
             categoryApi.getPostCategory(testToken, category).let {
