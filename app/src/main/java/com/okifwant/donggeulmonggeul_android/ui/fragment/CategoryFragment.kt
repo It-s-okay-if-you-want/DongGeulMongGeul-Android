@@ -1,35 +1,40 @@
 package com.okifwant.donggeulmonggeul_android.ui.fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.content.Intent
 import android.view.View
-import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseFragment
 import com.okifwant.donggeulmonggeul_android.databinding.FragmentCategoryBinding
+import com.okifwant.donggeulmonggeul_android.ui.activity.MainActivity
+import com.okifwant.donggeulmonggeul_android.ui.activity.PostActivity
 import com.okifwant.donggeulmonggeul_android.viewmodel.CategoryInCommunityViewModel
 import com.okifwant.donggeulmonggeul_android.viewmodel.CategoryViewModel
-import com.okifwant.donggeulmonggeul_android.viewmodel.MainViewModel
+import javax.inject.Inject
 
 class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
     override val layoutId = R.layout.fragment_category
     override val viewModel : CategoryViewModel by viewModels()
     private val categoryInCommunityViewModel by activityViewModels<CategoryInCommunityViewModel>()
 
+    @Inject
+    lateinit var mainActivity: MainActivity
 
 
     override fun init() {
         binding.fragment = this
         binding.plus.setOnClickListener {
             //start post 작성
+            startPost()
         }
     }
 
+    fun startPost() {
+        val postIntent = Intent(requireActivity(), PostActivity::class.java)
+        startActivity(postIntent)
+    }
 /*    1: 기뻐요
     2: 웃겨요
     3: 슬퍼요

@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
+import android.content.Intent
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
