@@ -8,4 +8,7 @@
     <dimen name="category_txt_2">16sp</dimen>
     <dimen name="category_item_margin_bottom">25dp</dimen>
     <dimen name="tutorial_start_btn_margin">30dp</dimen>
+    <dimen name="qna_title_txt">17sp</dimen>
+    <dimen name="qna_content_txt">15sp</dimen>
+    <dimen name="qna_item_margin_top">30dp</dimen>
 </resources>

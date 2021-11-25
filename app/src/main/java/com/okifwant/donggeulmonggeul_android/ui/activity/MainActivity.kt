@@ -1,6 +1,7 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
 import android.content.Intent
+import android.view.View
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -12,21 +13,32 @@ import com.okifwant.donggeulmonggeul_android.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(){
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     override val layoutId = R.layout.activity_main
-    override val viewModel : MainViewModel by viewModels()
+    override val viewModel: MainViewModel by viewModels()
 
     override fun init() {
-    initBottomNavBar()
+        initBottomNavBar()
+        observeViewModel()
     }
 
-    private fun initBottomNavBar(){
-        val navController = supportFragmentManager.findFragmentById(R.id.nav_host)?.findNavController()
+    private fun initBottomNavBar() {
+        val navController =
+            supportFragmentManager.findFragmentById(R.id.nav_host)?.findNavController()
         val nav = binding.bottomNav as BottomNavigationView
         navController?.let {
             nav.setupWithNavController(navController)
         }
+    }
+
+    private fun observeViewModel() {
+        viewModel.clickEvent.observe(this, {
+            when (it) {
+                1 -> binding.bottomNav.visibility = View.GONE
+                2 -> binding.bottomNav.visibility = View.VISIBLE
+            }
+        })
     }
 
 }

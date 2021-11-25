@@ -33,5 +33,9 @@
         android:id="@+id/categoryInCommunityFragment"
         tools:layout="@layout/fragment_category_in_community"
         android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.CategoryInCommunityFragment"
-        android:label="CategoryInCommunityFragment" />
+        android:label="CategoryInCommunityFragment" >
+        <action
+            android:id="@+id/action_categoryInCommunityFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
 </navigation>

@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.CommunityFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="communityFragment" />
+        tools:context=".ui.fragment.CommunityFragment">
 
-</FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:includeFontPadding="false"
+                android:text="QnA"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="30dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Q : 신고 먹으면 이모티콘으로 막은 이유   "
+                    android:textSize="@dimen/qna_title_txt"
+                    android:fontFamily="@font/noto_sans_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A : 제재를 먹은 사용자 또한 사용자기 때문에 최소한의 의사표현을 하여 서비스를 이용할 수 있도록 하기 위함입니다"
+                    android:textSize="@dimen/qna_content_txt"
+                    android:fontFamily="@font/noto_sans_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="#6C6C6C"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/qna_item_margin_top"
+                    android:text="Q : 감정(기분)으로 카테고리를 나눈 이유"
+                    android:textSize="@dimen/qna_title_txt"
+                    android:fontFamily="@font/noto_sans_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A : 다른 타 서비스들과의 차별점을 주기 위함입니다"
+                    android:textSize="@dimen/qna_content_txt"
+                    android:fontFamily="@font/noto_sans_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="#6C6C6C"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

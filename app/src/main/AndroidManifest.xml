@@ -20,12 +20,15 @@
             android:name=".ui.activity.MyInformationSetMainActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.PostDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.TutorialMainActivity"
             android:exported="true" />
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize|adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"

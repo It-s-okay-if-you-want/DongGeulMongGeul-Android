@@ -41,6 +41,11 @@ class RecyclerViewAdapter :
         return items[position]
     }
 
+    fun updateData(newItems: List<RecyclerItem>) {
+        this.items.clear()
+        this.items.addAll(newItems)
+        notifyDataSetChanged()
+    }
     inner class BindingViewHolder(
         val binding: ViewDataBinding,
     ) : RecyclerView.ViewHolder(binding.root)

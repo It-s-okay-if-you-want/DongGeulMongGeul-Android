@@ -23,7 +23,6 @@ class MainFragment : Fragment() {
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var binding : FragmentMainBinding
 
-    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InF3ZXIxMjM0IiwiaWF0IjoxNjM3ODU5NjM2LCJleHAiOjE2Mzc5NDYwMzYsInN1YiI6InRva2VuIn0.lKdKm3fFORLpXsNw8S3_uJZx8kmxy1n72dQ5_udjsGk"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,7 +56,7 @@ class MainFragment : Fragment() {
 
                 lifecycleScope.launch {
 
-                    viewModel.getAuth(token)
+                    viewModel.getAuth()
                 }
 
             }
@@ -71,7 +70,7 @@ class MainFragment : Fragment() {
 
                 lifecycleScope.launch {
 
-                    viewModel.getPoPAndNewPost(token)
+                    viewModel.getPoPAndNewPost()
                 }
 
             }

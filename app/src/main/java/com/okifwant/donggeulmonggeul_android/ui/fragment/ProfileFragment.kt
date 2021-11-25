@@ -38,7 +38,6 @@ class ProfileFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)        // Inflate the layout for this fragment
 
-        binding.fragment = this
         userPost()
         getAuth()
 
@@ -66,7 +65,7 @@ class ProfileFragment : Fragment() {
 
                 lifecycleScope.launch {
 
-                    viewModel.getAuth(token)
+                    viewModel.getAuth()
                 }
 
             }
