@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_nav_graph"
+    app:startDestination="@id/tutorialMainFragment">
+    <fragment
+        android:id="@+id/tutorialMainFragment"
+        android:name="com.okifwant.donggeulmonggeul_android.ui.TutorialMainFragment"
+        tools:layout="@layout/fragment_tutorial_main"
+        android:label="TutorialMainFragment" />
+</navigation>

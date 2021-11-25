@@ -80,5 +80,7 @@ dependencies {
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     //custom viewpager
+    implementation "com.github.zhpanvip:viewpagerindicator:1.2.1"
     implementation 'com.tbuonomo:dotsindicator:4.2'
+
 }
