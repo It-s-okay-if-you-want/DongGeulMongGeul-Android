@@ -4,6 +4,7 @@ import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostBinding
+import com.okifwant.donggeulmonggeul_android.ui.dialog.PostCategoryDialog
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostViewModel
 import gun0912.tedimagepicker.builder.TedImagePicker
 
@@ -21,9 +22,11 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
             postImageTv.setOnClickListener {
                 TedImagePicker.with(this@PostActivity)
                     .start {
-                        vm.imageUri.value = it
+                        viewModel.imageUri.value = it
                     }
-
+            }
+            postCategoryTv.setOnClickListener {
+                PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
             }
         }
     }
