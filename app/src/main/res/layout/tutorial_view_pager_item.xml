@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -23,10 +25,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:gravity="start"
-            android:text="불러오는중"
             android:fontFamily="@font/noto_sans_bold"
+            android:gravity="start"
             android:includeFontPadding="false"
+            android:text="불러오는중"
             android:textColor="@color/main_color"
             android:textSize="25sp" />
 
@@ -34,15 +36,33 @@
             android:id="@+id/content_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="start"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/noto_sans_medium"
+            android:gravity="start"
             android:includeFontPadding="false"
             android:text="불러오는중"
-            android:layout_marginTop="5dp"
             android:textColor="@color/main_color"
             android:textSize="17sp" />
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tutorial_start_btn_margin"
+        android:layout_marginEnd="@dimen/tutorial_start_btn_margin"
+        android:background="@drawable/tutorial_start_btn"
+        android:fontFamily="@font/noto_sans_medium"
+        android:includeFontPadding="false"
+        android:text="시작하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

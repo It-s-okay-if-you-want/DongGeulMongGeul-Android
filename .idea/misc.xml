@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/drawable/tutorial_start_btn.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/activity_tutorial_main.xml" value="0.12" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/fragment_tutorial.xml" value="0.21875" />
-        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/fragment_tutorial_main.xml" value="0.2" />
-        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/tutorial_view_pager_item.xml" value="0.264" />
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/fragment_tutorial_main.xml" value="0.152" />
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/tutorial_view_pager_item.xml" value="0.2" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DongGeulMongGeul-Android/app/src/main/res/layout/view_pager_item.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
       </map>
