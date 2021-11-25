@@ -72,6 +72,72 @@
                 android:orientation="vertical">
 
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_all"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_7"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_all"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/all"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_all"
+                        app:layout_constraintEnd_toEndOf="@+id/background_all"
+                        app:layout_constraintStart_toStartOf="@+id/background_all"
+                        app:layout_constraintTop_toTopOf="@+id/background_all" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_all"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="전체 게시물"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="못 고르겠어요 다 볼래요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
