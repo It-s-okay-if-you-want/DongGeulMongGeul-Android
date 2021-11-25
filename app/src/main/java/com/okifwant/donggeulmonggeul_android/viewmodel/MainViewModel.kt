@@ -10,6 +10,7 @@ import com.okifwant.donggeulmonggeul_android.base.Event
 import com.okifwant.donggeulmonggeul_android.data.model.auth.Auth
 import com.okifwant.donggeulmonggeul_android.data.model.newpop.Data
 import com.okifwant.donggeulmonggeul_android.data.model.newpop.Post
+import com.okifwant.donggeulmonggeul_android.widget.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -35,6 +36,18 @@ class MainViewModel @Inject constructor(
 
     private val _data = MutableLiveData<Post>()
     val data: LiveData<Post> get() = _data
+
+    val clickEvent: LiveData<Any> get() = _clickEvent
+    private val _clickEvent = SingleLiveEvent<Any>()
+
+
+    // 1 = 숨기기, 2 = 보이기
+    fun setClickEvent(setup : Int) {
+        when(setup){
+            1 -> _clickEvent.postValue(1)
+            2 -> _clickEvent.postValue(2)
+        }
+    }
 
     suspend fun getPoPAndNewPost(token : String) = viewModelScope.launch {
 
