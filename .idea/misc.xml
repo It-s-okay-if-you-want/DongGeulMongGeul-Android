@@ -7,7 +7,9 @@
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.2935185185185185" />
         <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.287962962962963" />
         <entry key="app/src/main/res/drawable/shape_category_bottom_dialog.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable/shape_comment_et.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/drawable/shape_edittext_background.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable/shape_textview_background.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2019462542577121" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17495443523855736" />
         <entry key="app/src/main/res/layout/activity_post.xml" value="0.43401707461375616" />
