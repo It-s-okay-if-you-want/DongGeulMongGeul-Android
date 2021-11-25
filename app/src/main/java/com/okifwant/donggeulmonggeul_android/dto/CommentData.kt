@@ -1,7 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.dto
 
 data class CommentData(
-
     val idx : String,
     val content : String,
     val createdAt : String,

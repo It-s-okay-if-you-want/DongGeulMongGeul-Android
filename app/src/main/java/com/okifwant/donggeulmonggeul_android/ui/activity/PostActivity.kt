@@ -10,6 +10,7 @@ import com.okifwant.donggeulmonggeul_android.ui.dialog.PostCategoryDialog
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import gun0912.tedimagepicker.builder.TedImagePicker
+import gun0912.tedimagepicker.util.ToastUtil
 
 @AndroidEntryPoint
 class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
@@ -36,7 +37,7 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                 }
             }
             viewModel.done.observe(this@PostActivity, {
-                Toast.makeText(application.baseContext, "게시하였습니다", Toast.LENGTH_SHORT).show()
+                ToastUtil.showToast("게시되었습니다")
                 finish()
             })
         }
