@@ -35,8 +35,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     }
 
     private fun loginSuccess(){
-        println("실행")
-        ToastUtil.showToast("성공하였습니다")
         val intent = Intent(this, TutorialMainActivity::class.java)
         startActivity(intent)
         finish()
