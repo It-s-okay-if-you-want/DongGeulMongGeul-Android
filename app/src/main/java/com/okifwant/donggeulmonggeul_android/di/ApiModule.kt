@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.di
 
+import com.okifwant.donggeulmonggeul_android.data.api.PostService
 import com.okifwant.donggeulmonggeul_android.data.api.CategoryApi
 import dagger.Module
 import dagger.Provides
@@ -31,6 +32,12 @@ object ApiModule {
             .Builder()
             .addNetworkInterceptor(httpLoggingInterceptor)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideLoginService(retrofit: Retrofit): PostService {
+        return retrofit.create(PostService::class.java)
+    }
 
     @Singleton
     @Provides

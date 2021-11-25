@@ -1,14 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</FrameLayout>
+   <data>
+
+      <variable
+          name="text"
+          type="com.okifwant.donggeulmonggeul_android.data.model.auth.Auth" />
+
+   </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white"
+       tools:context=".ui.fragment.MainFragment">
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="30dp"
+          android:layout_marginTop="20dp"
+          android:src="@drawable/logo"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginTop="20dp"
+          android:layout_marginEnd="30dp"
+          android:src="@drawable/menu"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <ScrollView
+          android:layout_marginTop="20dp"
+          android:layout_width="match_parent"
+          android:fillViewport="true"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:scrollbars="none"
+          android:layout_height="0dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:background="@color/white"
+             android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:id="@+id/textView"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_regular"
+                android:includeFontPadding="false"
+                android:text="안녕하세요,"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/noto_sans_medium"
+                android:includeFontPadding="false"
+                android:text="@{text.data.nick}"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/noto_sans_regular"
+                android:includeFontPadding="false"
+                android:text="님"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/user_name_textView"
+                app:layout_constraintStart_toEndOf="@+id/user_name_textView"
+                app:layout_constraintTop_toTopOf="@+id/user_name_textView" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/text_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+               <TextView
+                   android:id="@+id/textView3"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   android:fontFamily="@font/noto_sans_regular"
+                   android:includeFontPadding="false"
+                   android:text="오늘의"
+                   android:textColor="@color/black"
+                   android:textSize="22dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <TextView
+                   android:id="@+id/textView4"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="10dp"
+                   android:fontFamily="@font/noto_sans_bold"
+                   android:includeFontPadding="false"
+                   android:text="@{text.data.local}"
+                   android:textColor="@color/main_color"
+                   android:textSize="22dp"
+                   app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                   app:layout_constraintStart_toEndOf="@+id/textView3"
+                   app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="2dp"
+                   android:text="은(는)"
+                   android:textColor="@color/black"
+                   android:textSize="22dp"
+                   app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                   app:layout_constraintStart_toEndOf="@+id/textView4"
+                   app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+               <TextView
+                   android:id="@+id/textView5"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="10dp"
+                   android:fontFamily="@font/noto_sans_regular"
+                   android:includeFontPadding="false"
+                   android:text="어떤지 살펴볼까요?"
+                   android:textColor="@color/black"
+                   android:textSize="22dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:src="@drawable/main_back_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_area" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/report_background"
+                android:elevation="5dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+               <TextView
+                   android:id="@+id/report_count_textview"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:elevation="20dp"
+                   android:text="4"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="지금까지 받은 신고"
+                   android:textColor="#7E858B"
+                   android:textSize="12dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/report_count_textview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="90dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+               <TextView
+                   android:id="@+id/textView6"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/noto_sans_bold"
+                   android:text="✨ 우리 동네"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8dp"
+                   android:fontFamily="@font/noto_sans_bold"
+                   android:text="최신글"
+                   android:textColor="@color/main_color"
+                   android:textSize="20dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toEndOf="@+id/textView6"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/more_view_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="더보기 >"
+                android:layout_marginRight="40dp"
+                android:textColor="#B7BCC0"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:id="@+id/new_viewpager"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:id="@+id/popularity_text_view"
+                app:layout_constraintTop_toBottomOf="@id/new_viewpager"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout2">
+
+               <TextView
+                   android:id="@+id/textView2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/noto_sans_bold"
+                   android:text="💙 우리 동네"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8dp"
+                   android:fontFamily="@font/noto_sans_bold"
+                   android:text="인기글"
+                   android:textColor="@color/main_color"
+                   android:textSize="20dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toEndOf="@+id/textView2"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/more_view_textview_pop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="더보기 >"
+                android:layout_marginRight="40dp"
+                android:textColor="#B7BCC0"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/popularity_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/popularity_text_view" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/popularity_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/popularity_text_view" />
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </ScrollView>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
