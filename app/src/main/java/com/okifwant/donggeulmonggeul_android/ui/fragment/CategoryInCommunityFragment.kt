@@ -41,6 +41,7 @@ class CategoryInCommunityFragment : Fragment() {
             false
         )
         binding.fragment = this
+        viewModel.getPostCategoryList.clear()
         Log.d("TAG", "CategoryInCommunityFragment 호출됨")
         observeViewModel()
         viewModel.getPostCategory(viewModel.choiceCategory)
