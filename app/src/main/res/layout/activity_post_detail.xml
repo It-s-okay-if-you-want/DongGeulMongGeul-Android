@@ -48,7 +48,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout3"
             app:layout_constraintTop_toBottomOf="@id/post_tb"
             app:recyclerItems="@{vm.postItems}" />
 

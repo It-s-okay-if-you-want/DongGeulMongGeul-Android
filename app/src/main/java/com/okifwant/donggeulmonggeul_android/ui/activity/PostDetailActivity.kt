@@ -41,8 +41,12 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
                 }
             })
             startEditPost.observe(this@PostDetailActivity, {
-                val intent = Intent(this@PostDetailActivity, PostActivity::class.java)
-                intent.putExtra("edit_postId", it)
+                val intent = Intent(this@PostDetailActivity, PostActivity::class.java).apply {
+                    putExtra("edit_postId", it)
+                    putExtra("title",viewModel.postData.value!!.title)
+                    putExtra("category", viewModel.postData.value!!.category)
+                    putExtra("content", viewModel.postData.value!!.content)
+                }
                 startActivity(intent)
             })
         }

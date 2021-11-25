@@ -8,6 +8,7 @@ import com.okifwant.donggeulmonggeul_android.adapter.RecyclerItem
 import com.okifwant.donggeulmonggeul_android.base.BaseViewModel
 import com.okifwant.donggeulmonggeul_android.base.SingleLiveEvent
 import com.okifwant.donggeulmonggeul_android.data.postdetail.PostDetailDataSource
+import com.okifwant.donggeulmonggeul_android.dto.PostDetailData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,12 +27,15 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
     val clickedCommentId = SingleLiveEvent<Int>()
 
     val startEditPost = SingleLiveEvent<Int>()
+
+    val postData = MutableLiveData<PostDetailData>()
     fun getPostDetailData() {
         viewModelScope.launch {
             val response = postDetailDataSource.getPostDetail(postId)
             if (response.isSuccessful) {
                 if (response.body() != null) {
                     val body = response.body()!!
+                    postData.value = body.data
                     postItems.value = ArrayList<RecyclerItem>().apply {
                         add(
                             RecyclerItem(

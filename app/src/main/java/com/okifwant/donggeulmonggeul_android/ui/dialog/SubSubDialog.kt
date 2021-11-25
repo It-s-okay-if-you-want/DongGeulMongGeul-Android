@@ -32,7 +32,7 @@ class SubSubDialog(private val viewModel: PostDetailViewModel, private val isPos
         binding.run {
             editBtn.setOnClickListener {
                 if(isPost) {
-                    viewModel.startEditPost.call()
+                    viewModel.startEditPost.value = viewModel.postId
                 }
             }
             reportBtn.setOnClickListener {
