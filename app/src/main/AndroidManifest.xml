@@ -15,7 +15,17 @@
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
             android:name=".ui.TutorialMainActivity"
-            android:exported="true" >
+            android:exported="true" />
+        <activity
+            android:name=".ui.SignUpActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize|adjustResize" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,10 +33,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true">
+            android:name=".ui.activity.MainActivity"
+            android:exported="true"/>
 
-        </activity>
     </application>
 
 </manifest>
