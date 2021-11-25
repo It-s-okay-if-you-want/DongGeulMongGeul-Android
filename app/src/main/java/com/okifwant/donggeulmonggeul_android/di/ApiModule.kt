@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.di
 
+import com.okifwant.donggeulmonggeul_android.data.api.CategoryApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
-    private const val BASE_URL = "https://api.noonbody.me"
+    private const val BASE_URL = "http://101.101.208.54:3000/"
 
     @Singleton
     @Provides
@@ -38,4 +39,10 @@ object ApiModule {
         .baseUrl(BASE_URL)
         .client(providesOkHttpClient(providesHttpLoggingInterceptor()))
         .build()
+
+    @Provides
+    @Singleton
+    fun provideCategoryApiService(retrofit: Retrofit): CategoryApi {
+        return retrofit.create(CategoryApi::class.java)
+    }
 }

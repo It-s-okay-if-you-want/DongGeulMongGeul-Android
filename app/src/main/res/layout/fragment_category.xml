@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.okifwant.donggeulmonggeul_android.ui.fragment.CategoryFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.CategoryFragment">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/noto_sans_bold"
+                android:includeFontPadding="false"
+                android:text="카테고리"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/menu"
+                android:padding="3dp"
+                android:src="@drawable/ic_plus" />
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="3dp"
+                android:src="@drawable/ic_menu" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/happy"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_1"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_1"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/happy"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_1"
+                        app:layout_constraintEnd_toEndOf="@+id/background_1"
+                        app:layout_constraintStart_toStartOf="@+id/background_1"
+                        app:layout_constraintTop_toTopOf="@+id/background_1" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="기뻐요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="오늘 내 행복을 나눠요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/smail"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_2"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_2"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/ext"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_2"
+                        app:layout_constraintEnd_toEndOf="@+id/background_2"
+                        app:layout_constraintStart_toStartOf="@+id/background_2"
+                        app:layout_constraintTop_toTopOf="@+id/background_2" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="웃어요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="같이 웃으면 더 재밌어요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sad"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_3"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_3"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/sad"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_3"
+                        app:layout_constraintEnd_toEndOf="@+id/background_3"
+                        app:layout_constraintStart_toStartOf="@+id/background_3"
+                        app:layout_constraintTop_toTopOf="@+id/background_3" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_3"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="슬퍼요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="위로가 필요하면 오세요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scary"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_4"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_4"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/sad_two"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_4"
+                        app:layout_constraintEnd_toEndOf="@+id/background_4"
+                        app:layout_constraintStart_toStartOf="@+id/background_4"
+                        app:layout_constraintTop_toTopOf="@+id/background_4" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_4"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="무서워요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="혼자 있기 무서워요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/here"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_5"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_5"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/stars"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_5"
+                        app:layout_constraintEnd_toEndOf="@+id/background_5"
+                        app:layout_constraintStart_toStartOf="@+id/background_5"
+                        app:layout_constraintTop_toTopOf="@+id/background_5" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_5"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="여기에요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="우리 동네에만 알려줄 거에요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/meet"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_6"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_6"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_6"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/waring"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_6"
+                        app:layout_constraintEnd_toEndOf="@+id/background_6"
+                        app:layout_constraintStart_toStartOf="@+id/background_6"
+                        app:layout_constraintTop_toTopOf="@+id/background_6" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_6"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="같이해요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="진짜 동네 친구가 되어봐요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/waring"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_7"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_7"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_7"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/fire"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_7"
+                        app:layout_constraintEnd_toEndOf="@+id/background_7"
+                        app:layout_constraintStart_toStartOf="@+id/background_7"
+                        app:layout_constraintTop_toTopOf="@+id/background_7" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_7"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="조심해요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="다 좋지만 여기는 피해요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/star"
+                    android:onClick="@{fragment::clickEvent}"
+                    android:layout_marginBottom="@dimen/category_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/background_8"
+                        android:layout_width="@dimen/category_icon_background"
+                        android:layout_height="@dimen/category_icon_background"
+                        android:src="@drawable/o_8"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icon_8"
+                        android:layout_width="@dimen/category_icon_size"
+                        android:layout_height="@dimen/category_icon_size"
+                        android:src="@drawable/star"
+                        app:layout_constraintBottom_toBottomOf="@+id/background_8"
+                        app:layout_constraintEnd_toEndOf="@+id/background_8"
+                        app:layout_constraintStart_toStartOf="@+id/background_8"
+                        app:layout_constraintTop_toTopOf="@+id/background_8" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/category_icon_and_txt_size"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/background_8"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_medium"
+                            android:includeFontPadding="false"
+                            android:text="추천해요"
+                            android:textColor="#7E858B"
+                            android:textSize="@dimen/category_txt_1_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_bold"
+                            android:includeFontPadding="false"
+                            android:text="모든 사림이 알아야 돼요"
+                            android:textColor="@color/main_color"
+                            android:textSize="@dimen/category_txt_2" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/category_arrow_size"
+                        android:layout_height="@dimen/category_arrow_size"
+                        android:src="@drawable/ic_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
