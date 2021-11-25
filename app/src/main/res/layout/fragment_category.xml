@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="fragment"
+            type="com.okifwant.donggeulmonggeul_android.ui.fragment.CategoryFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,6 +75,8 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/all_post"
+                    android:onClick="@{fragment::clickEvent}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/category_item_margin_bottom"

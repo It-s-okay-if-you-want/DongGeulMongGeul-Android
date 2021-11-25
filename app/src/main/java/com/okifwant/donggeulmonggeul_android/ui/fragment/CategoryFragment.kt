@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseFragment
 import com.okifwant.donggeulmonggeul_android.databinding.FragmentCategoryBinding
@@ -19,6 +20,13 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
 
     override fun init() {
+        binding.fragment = this
+    }
 
+    fun clickEvent(view: View){
+  /*      when(view.id){
+            binding.allPost.id ->
+        }*/
+        this@CategoryFragment.findNavController().navigate(R.id.action_categoryFragment_to_categoryInCommunityFragment)
     }
 }

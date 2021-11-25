@@ -14,7 +14,11 @@
         android:id="@+id/categoryFragment"
         android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryInCommunityFragment"
+            app:destination="@id/categoryInCommunityFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.CommunityFragment"
@@ -25,4 +29,9 @@
         android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main"/>
+    <fragment
+        android:id="@+id/categoryInCommunityFragment"
+        tools:layout="@layout/fragment_category_in_community"
+        android:name="com.okifwant.donggeulmonggeul_android.ui.fragment.CategoryInCommunityFragment"
+        android:label="CategoryInCommunityFragment" />
 </navigation>

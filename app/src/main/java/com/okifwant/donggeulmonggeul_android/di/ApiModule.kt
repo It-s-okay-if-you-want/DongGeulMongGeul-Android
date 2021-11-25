@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.di
 
+import com.okifwant.donggeulmonggeul_android.data.api.CategoryApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,4 +39,10 @@ object ApiModule {
         .baseUrl(BASE_URL)
         .client(providesOkHttpClient(providesHttpLoggingInterceptor()))
         .build()
+
+    @Provides
+    @Singleton
+    fun provideCategoryApiService(retrofit: Retrofit): CategoryApi {
+        return retrofit.create(CategoryApi::class.java)
+    }
 }
