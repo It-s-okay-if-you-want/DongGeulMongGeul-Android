@@ -3,17 +3,18 @@ package com.okifwant.donggeulmonggeul_android.data.postdetail
 import com.okifwant.donggeulmonggeul_android.data.api.PostDetailApi
 import com.okifwant.donggeulmonggeul_android.dto.PostDetailResponse
 import com.okifwant.donggeulmonggeul_android.dto.PutPostDetailRequest
+import com.okifwant.donggeulmonggeul_android.pref.LocalStorage
 import retrofit2.Response
 
 
-class PostDetailDataSourceImpl(private val postDetailApi : PostDetailApi): PostDetailDataSource {
+class PostDetailDataSourceImpl(private val postDetailApi : PostDetailApi,val localStorage: LocalStorage): PostDetailDataSource {
     override suspend fun getPostDetail(id: Int): Response<PostDetailResponse> =
-        postDetailApi.getPostDetail(id)
+        postDetailApi.getPostDetail(id,localStorage.getToken())
 
     override suspend fun deletePostDetail(id: Int): Response<Unit> =
-        postDetailApi.deletePostDetail(id)
+        postDetailApi.deletePostDetail(id,localStorage.getToken())
 
     override suspend fun putPostDetail(id: Int, postDetail: PutPostDetailRequest): Response<Unit> =
-        putPostDetail(id,postDetail)
+        postDetailApi.putPostDetail(id,postDetail,localStorage.getToken())
 
 }

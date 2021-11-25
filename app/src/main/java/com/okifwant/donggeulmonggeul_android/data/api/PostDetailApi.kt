@@ -9,19 +9,22 @@ interface PostDetailApi {
 
     @GET("/post/{idx}")
     fun getPostDetail(
-        @Path("idx") id : Int
+        @Path("idx") id : Int,
+        @Header("Authorization") token : String
     ) : Response<PostDetailResponse>
 
     @DELETE("/post/{idx}")
     fun deletePostDetail(
-        @Path("idx") id : Int
+        @Path("idx") id : Int,
+        @Header("Authorization") token : String
     ) : Response<Unit>
 
 
     @PUT("/post/{idx}")
     fun putPostDetail(
         @Path("idx") id : Int,
-        @Body putPostDetail : PutPostDetailRequest
+        @Body putPostDetail : PutPostDetailRequest,
+        @Header("Authorization") token : String
     ) : Response<Unit>
 
 
