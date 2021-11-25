@@ -17,7 +17,7 @@ class SharedPrefStorage(val context: Context) : LocalStorage {
         }
 
     override fun getToken(): String =
-        "Bearer " + getPref(context).getString(tokenKey, "")
+        getPref(context).getString(tokenKey, "").toString()
 
 
     override fun saveRefreshToken(token: String) =
@@ -27,7 +27,7 @@ class SharedPrefStorage(val context: Context) : LocalStorage {
         }
 
     override fun getRefreshToken()  =
-        "Bearer " + getPref(context).getString(refreshTokenKey, "")
+        getPref(context).getString(refreshTokenKey, "").toString()
 
     private fun getPref(context: Context): SharedPreferences =
         context.getSharedPreferences("pref", Context.MODE_PRIVATE)

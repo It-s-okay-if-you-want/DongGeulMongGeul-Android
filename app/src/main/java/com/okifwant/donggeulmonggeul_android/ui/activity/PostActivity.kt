@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.ui.activity
 
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.okifwant.donggeulmonggeul_android.R
@@ -38,7 +39,7 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                 }
             }
             viewModel.done.observe(this@PostActivity, {
-                Snackbar.make(binding.root, "게시하였습니다", Snackbar.LENGTH_SHORT).show()
+                Toast.makeText(application.baseContext, "게시하였습니다", Toast.LENGTH_SHORT).show()
                 finish()
             })
         }

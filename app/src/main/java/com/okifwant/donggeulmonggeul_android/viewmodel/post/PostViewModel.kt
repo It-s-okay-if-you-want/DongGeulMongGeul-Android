@@ -33,6 +33,8 @@ class PostViewModel @Inject constructor(private val postDataSource: PostDataSour
     private val _clickEvent = MutableEventFlow<ClickEvent.CategoryClick>()
     val clickEvent = _clickEvent.asEventFlow()
 
+    val message = SingleLiveEvent<String>()
+
     val done = SingleLiveEvent<Unit>()
 
     fun onClickEvent(event: ClickEvent.CategoryClick) {
@@ -71,6 +73,7 @@ class PostViewModel @Inject constructor(private val postDataSource: PostDataSour
                 )
             )
             if(response.isSuccessful) {
+                message.value = "게시되었습니다"
                 done.call()
             }
         }
