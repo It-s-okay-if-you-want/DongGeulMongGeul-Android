@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import com.okifwant.donggeulmonggeul_android.base.BaseViewModel
 
+
 class PostViewModel: BaseViewModel() {
 
     val title = MutableLiveData<String>()

@@ -28,5 +28,24 @@ class PostCategoryDialog(private val vm: PostViewModel): BottomSheetDialogFragme
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.vm = vm
+        observeEvent()
+    }
+
+    private fun observeEvent() {
+        vm.run {
+            categoryIndex.observe(viewLifecycleOwner, {
+                category.value =
+                    when(it) {
+                        0 -> "기뻐요"
+                        1 -> "웃겨요"
+                        2 -> "슬퍼요"
+                        3 -> "무서워요"
+                        4 -> "여기에요"
+                        5 -> "조심해요"
+                        6 -> "추천해요"
+                        else -> "카테고리"
+                    }
+            })
+        }
     }
 }
