@@ -6,6 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F9F9F9"
         tools:context=".ui.activity.PostActivity">
 
         <androidx.appcompat.widget.Toolbar
@@ -13,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white"
             app:navigationIcon="@drawable/ic_close_big">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -34,5 +36,18 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="15dp"/>
         </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edittext_background"
+            app:layout_constraintTop_toBottomOf="@+id/post_tb"
+            android:hint="이름"
+            android:paddingStart="10dp"
+            android:textSize="13sp"
+            android:textColor="#7E858B"
+            android:fontFamily="@font/noto_sans_regular"
+            android:layout_marginTop="15dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
