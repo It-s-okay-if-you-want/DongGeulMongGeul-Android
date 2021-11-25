@@ -32,7 +32,9 @@ class PostActivity : BaseActivity<ActivityPostBinding, PostViewModel>() {
                     }
             }
             postCategoryTv.setOnClickListener {
-                PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
+                if (supportFragmentManager.findFragmentByTag("category_dialog")?.isAdded != true){
+                    PostCategoryDialog(viewModel).show(supportFragmentManager, "category_dialog")
+                }
             }
         }
     }
