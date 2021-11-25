@@ -35,8 +35,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
     private fun loginSuccess(){
         println("실행")
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, TutorialMainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun login(){

@@ -1,5 +1,6 @@
 package com.okifwant.donggeulmonggeul_android.adapter.tutorial
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,15 @@ class PagerRecyclerAdapter(
         )
 
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
+
         holder.bind(position)
+        holder.itemView.findViewById<Button>(R.id.start_btn).setOnClickListener {
+            Log.d("TAG","시작버튼 눌림 하놔")
+            viewModel.setStartBtnClickEvent()
+        }
+        /*      startBtn.setOnClickListener {
+                  viewModel.setStartBtnClickEvent()
+              }*/
     }
 
     override fun getItemCount(): Int = 4

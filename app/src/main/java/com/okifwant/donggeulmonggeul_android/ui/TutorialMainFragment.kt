@@ -29,12 +29,12 @@ class TutorialMainFragment :
     }
 
     private fun observeViewModel() {
-        viewModel.startBtnEvent.observe(this, { page ->
+    /*    viewModel.startBtnEvent.observe(this, { page ->
             Log.d("TAG", "page info : $page")
-            /* when (page) {
+            *//* when (page) {
                  3 -> binding.startBtn.visibility = View.VISIBLE
                  else -> binding.startBtn.visibility = View.INVISIBLE
-             }*/
-        })
+             }*//*
+        })*/
     }
 }
