@@ -4,6 +4,7 @@ import androidx.activity.viewModels
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.base.BaseActivity
 import com.okifwant.donggeulmonggeul_android.databinding.ActivityPostDetailBinding
+import com.okifwant.donggeulmonggeul_android.ui.dialog.SubSubDialog
 import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import gun0912.tedimagepicker.util.ToastUtil
@@ -27,6 +28,11 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding, PostDetailVie
         viewModel.run {
             message.observe(this@PostDetailActivity, {
                 ToastUtil.showToast(it)
+            })
+            clickedCommentId.observe(this@PostDetailActivity,{
+                if (supportFragmentManager.findFragmentByTag("subSubDialog")?.isAdded != true) {
+                    SubSubDialog(viewModel).show(supportFragmentManager, "subSubDialog")
+                }
             })
         }
     }

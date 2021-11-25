@@ -10,8 +10,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.okifwant.donggeulmonggeul_android.R
 import com.okifwant.donggeulmonggeul_android.databinding.DialogDatePickerBinding
+import com.okifwant.donggeulmonggeul_android.viewmodel.post.PostDetailViewModel
 
-class SubSubDialog: DialogFragment() {
+class SubSubDialog(private val viewModel: PostDetailViewModel): DialogFragment() {
     lateinit var binding: DialogDatePickerBinding
 
     override fun onCreateView(

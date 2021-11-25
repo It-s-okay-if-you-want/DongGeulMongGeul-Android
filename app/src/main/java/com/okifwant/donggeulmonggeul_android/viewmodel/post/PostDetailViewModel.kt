@@ -23,6 +23,7 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
 
     val message = SingleLiveEvent<String>()
 
+    val clickedCommentId = SingleLiveEvent<Int>()
     fun getPostDetailData() {
         viewModelScope.launch {
             val response = postDetailDataSource.getPostDetail(postId)
@@ -49,7 +50,8 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
                                 RecyclerItem(
                                     data = PostCommentViewModel(
                                         comment = comment.content,
-                                        userName = comment.userId
+                                        userName = comment.userId,
+                                        id = comment.idx
                                     ),
                                     layoutId = R.layout.item_post_comment,
                                     variableId = BR.comment
@@ -64,9 +66,9 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
 
     }
 
-    inner class PostCommentViewModel(val comment: String, val userName: String) {
+    inner class PostCommentViewModel(val comment: String, val userName: String, val id: Int) {
         fun more() {
-
+            clickedCommentId.value = id
         }
     }
 
@@ -81,6 +83,10 @@ class PostDetailViewModel @Inject constructor(private val postDetailDataSource: 
                 }
             }
         }
+    }
+
+    fun reportComment() {
+        postDetailDataSource
     }
 }
 
