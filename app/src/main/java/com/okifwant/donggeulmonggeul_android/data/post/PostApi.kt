@@ -13,10 +13,10 @@ interface PostApi {
 
     @Multipart
     @POST("/upload")
-    fun postImage(
+    suspend fun postImage(
         @Part image: MultipartBody.Part
     ): Response<PostImageResponse>
 
     @POST("/post")
-    fun post(@Body request: PostRequest): Response<Unit>
+    suspend fun post(@Body request: PostRequest): Response<Unit>
 }

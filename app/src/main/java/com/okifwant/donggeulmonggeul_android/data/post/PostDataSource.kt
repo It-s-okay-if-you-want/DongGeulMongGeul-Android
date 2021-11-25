@@ -8,7 +8,7 @@ import retrofit2.Response
 class PostDataSource(private val postApi: PostApi) {
 
     suspend fun postImage(image: MultipartBody.Part): Response<PostImageResponse> =
-        postApi.postImage(image)
+           postApi.postImage(image)
 
     suspend fun post(postRequest: PostRequest): Response<Unit> =
         postApi.post(postRequest)
